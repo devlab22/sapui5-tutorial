@@ -1,22 +1,28 @@
 <mvc:View
     controllerName='de.sapui5buch.demo.controller.App'
     xmlns:mvc='sap.ui.core.mvc'
-    xmlns='sap.m'>
+    xmlns='sap.m'
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
 
     <FlexBox>
         <Label text='Vorname' />
         <Input value='{person>/Vorname}' />
         <Label text='Nachname' />
         <Input value='{person>/Nachname}' />
+        <Button text="Drück mich" press='onPress' />
     </FlexBox>
     <Label text='Hallo {person>/Vorname} {person>/Nachname}' />
 
     <Table
         items='{person>/personen}'
-        alternateRowColors='false'
+        alternateRowColors='true'
         headerText='Personal'
         inset='true'
-        
+        mode="SingleSelectLeft"
+        selectionChange="onSelectionChange"
     >
 
         <columns>
@@ -33,7 +39,7 @@
 
         <items>
             <ColumnListItem
-               type='Active'
+                type='Active'
             >
                 <cells>
                     <Text text='{person>Vorname}' />
@@ -44,4 +50,45 @@
         </items>
 
     </Table>
+
+    <f:Form id='addressForm'>
+        <f:title>
+            <core:Title text='Address' />
+        </f:title>
+        <f:layout>
+            <f:ResponsiveGridLayout
+                labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+                labelSpanS="12" adjustLabelSpan="false"
+                emptySpanXL="4" emptySpanL="4" emptySpanM="4"
+                emptySpanS="0" columnsXL="1" columnsL="1"
+                columnsM="1" singleContainerFullSize="false" />
+        </f:layout>
+        <f:formContainers>
+            <f:FormContainer>
+                <f:formElements>
+                    <f:FormElement label="Strasse u. Hausnummer">
+                        <f:fields>
+                            <Input value="{person>Strasse}" />
+                            <Input value="{person>Hausnummer}">
+                                <layoutData>
+                                    <l:GridData span="XL1 L2 M2 S4" />
+                                </layoutData>
+                            </Input>
+                        </f:fields>
+                    </f:FormElement>
+                    <f:FormElement label="Postleitzahl u. Strasse Code/City">
+                        <f:fields>
+                            <Input value="{person>PLZ}">
+                                <layoutData>
+                                    <l:GridData span="XL1 L2 M2 S4" />
+                                </layoutData>
+                            </Input>
+                            <Input value="{person>Stadt}" />
+                        </f:fields>
+                    </f:FormElement>
+                </f:formElements>
+            </f:FormContainer>
+        </f:formContainers>
+    </f:Form>
+
 </mvc:View>
