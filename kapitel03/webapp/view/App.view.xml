@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName='de.sapui5buch.demo.controller.App'
+    xmlns:mvc='sap.ui.core.mvc'
+    xmlns='sap.m'>
+
+    <FlexBox>
+        <Label text='Vorname' />
+        <Input value='{person>/Vorname}' />
+        <Label text='Nachname' />
+        <Input value='{person>/Nachname}' />
+    </FlexBox>
+    <Label text='Hallo {person>/Vorname} {person>/Nachname}' />
+
+    <Table
+        items='{person>/personen}'
+        alternateRowColors='false'
+        headerText='Personal'
+        inset='true'
+        
+    >
+
+        <columns>
+            <Column>
+                <Text text='Vorname' />
+            </Column>
+            <Column>
+                <Text text='Nachname' />
+            </Column>
+            <Column>
+                <Text text='Geburtsdatum' />
+            </Column>
+        </columns>
+
+        <items>
+            <ColumnListItem
+               type='Active'
+            >
+                <cells>
+                    <Text text='{person>Vorname}' />
+                    <Text text='{person>Nachname}' />
+                    <Text text='{person>Geburtsdatum}' />
+                </cells>
+            </ColumnListItem>
+        </items>
+
+    </Table>
+</mvc:View>
