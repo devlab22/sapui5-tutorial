@@ -14,12 +14,24 @@
         "technology": "UI5"
     },
     "sap.ui5": {
+        "rootView": {
+            "viewName": "de.sapui5buch.demo.view.App",
+            "type": "XML",
+            "async": true
+        },
         "dependencies": {
             "minUI5Version": "1.60.0",
             "libs": {
                 "sap.ui.core": {},
                 "sap.m": {}
             }
+        }, 
+        "contentDensities": {
+          "compact": true,
+          "cozy": true
+        },
+        "models": {
+            
         }
     }
 }

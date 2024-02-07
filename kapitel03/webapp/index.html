@@ -3,8 +3,8 @@
 
 <head>
     <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, 
-            initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Kapitel 03 - Beispielanwendung</title>
     <script 
         id='sap-ui-bootstrap' 
@@ -15,22 +15,20 @@
         data-sap-ui-preload="async"
         data-sap-ui-async="true"
         data-sap-ui-compatVersion="edge"
+        data-sap-ui-frameOptions="trusted"
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
         >
         </script>
 </head>
 
-<script>
-    sap.ui.require(['sap/ui/core/mvc/View'], function(View) {
-    View.create({ 
-       viewName: 'de.sapui5buch.demo.view.App',
-       type: sap.ui.core.mvc.ViewType.XML
-    }).then(function(oView) {    
-       oView.placeAt('body');
-    });
- })
-</script>
-
-<body id='body'>
-</body>
+<body class="sapUiBody">
+   <div 
+      data-sap-ui-component 
+      data-name="de.sapui5buch.demo"
+      data-id="container"
+      data-settings='{"id" : "demo"}'
+      >
+   </div>
+  </body>
 
 </html>
