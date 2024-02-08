@@ -5,10 +5,8 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("de.sapui5buch.demo.controller.BaseController", {
-
-		bDebug: false,
 		
-
+		
 		onNavBack: function () {
 			//console.log("base controller onNavBack");
 			var oHistory, sPreviousHash;

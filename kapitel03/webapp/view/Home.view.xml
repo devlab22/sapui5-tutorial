@@ -1,0 +1,43 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="de.sapui5buch.demo.controller.Home"
+>
+   <!-- <Shell> -->
+        <App>
+            <pages>
+                <Page id="home"
+                    
+                    >
+                    <content>
+                        <IconTabBar>
+                            <items>
+                                <IconTabFilter
+                                    key="table"
+                                    text="Table"
+                                    icon="sap-icon://card"
+                                >
+                                    <mvc:XMLView
+                                        id="tableView"
+                                        viewName="de.sapui5buch.demo.view.App"
+                                    />
+                                </IconTabFilter>
+
+                                <IconTabFilter
+                                    key="personal"
+                                    text="Personal"
+                                    icon="sap-icon://card"
+                                >
+                                    <mvc:XMLView
+                                        id="personalView"
+                                        viewName="de.sapui5buch.demo.view.Personal"
+                                    />
+                                </IconTabFilter>
+                            </items>
+                        </IconTabBar>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    <!-- </Shell> -->
+</mvc:View>

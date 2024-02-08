@@ -1,0 +1,129 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:core="sap.ui.core"
+    controllerName="de.sapui5buch.demo.controller.Personal"
+>
+    <App>
+        <pages>
+            <Page title="Personal">
+                <content>
+                    <uxap:ObjectPageLayout
+                        id="ObjectPageLayout"
+                        showHeaderContent="false"
+                        toggleHeaderOnTitleClick="false">
+
+                        <uxap:headerTitle>
+                            <uxap:ObjectPageDynamicHeaderTitle>
+                                <uxap:heading>
+                                    <Input
+                                        id="idInputField"
+                                        width="20rem"
+                                        placeholder="BusinessPartner ID..."
+                                        suggestionItemSelected="onSuggestionItemSelected"
+                                        showSuggestion="true"
+                                        suggest="onSuggest"
+                                        suggestionItems="{personal>/data}">
+                                        <suggestionItems>
+                                            <core:Item text="{personal>BusinessPartnerID} {personal>CompanyName}" />
+                                        </suggestionItems>
+                                    </Input>
+                                </uxap:heading>
+                            </uxap:ObjectPageDynamicHeaderTitle>
+                        </uxap:headerTitle>
+
+                        <uxap:headerContent>
+                            <FlexBox
+                                wrap="Wrap"
+                                fitContainer="true"
+                                id="headerContent">
+                                <VBox class="sapUiLargeMarginEnd">
+                                    <HBox>
+                                        <Title text="Partnerdata" />
+                                    </HBox>
+                                    <HBox>
+                                        <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="Firmenname:" />
+                                        <Text text="{personal>CompanyName}" />
+                                    </HBox>
+                                    <HBox>
+                                        <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="Partner ID:" />
+                                        <Text text="{personal>BusinessPartnerID}" />
+                                    </HBox>
+                                    <HBox>
+                                        <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="Legal Form:" />
+                                        <Text text="{personal>LegalForm}" />
+                                    </HBox>
+                                </VBox>
+                                <VBox>
+                                    <HBox>
+                                        <Title text="Kontaktdaten" />
+                                    </HBox>
+                                    <HBox>
+                                        <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="URL:" />
+                                        <Text text="{personal>WebAddress}" />
+                                    </HBox>
+                                    <HBox>
+                                        <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="Email-Addresse:" />
+                                        <Text text="{personal>EmailAddress}" />
+                                    </HBox>
+                                    <HBox>
+                                        <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="Telefon:" />
+                                        <Text text="{personal>PhoneNumber}" />
+                                    </HBox>
+                                    <HBox>
+                                        <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="Fax:" />
+                                        <Text text="{personal>FaxNumber}" />
+                                    </HBox>
+                                </VBox>
+                            </FlexBox>
+                        </uxap:headerContent>
+
+                        <uxap:sections>
+                            <uxap:ObjectPageSection
+                                title="Adresse"
+                                visible="false"
+                                id="addressSection">
+                                <uxap:subSections>
+                                    <uxap:ObjectPageSubSection>
+                                        <VBox>
+                                            <HBox>
+                                                <Label
+                                                    class="sapUiTinyMarginEnd"
+                                                    text="Strasse:" />
+                                                <Text text="{personal>Adresse/Street} {personal>Adresse/Building}" />
+                                            </HBox>
+                                            <HBox>
+                                                <Label
+                                                    class="sapUiTinyMarginEnd"
+                                                    text="Land PLZ Ort:" />
+                                                <Text text="{personal>Adresse/Country} {personal>Adresse/PostalCode} {personal>Adresse/City}" />
+                                            </HBox>
+                                        </VBox>
+                                    </uxap:ObjectPageSubSection>
+                                </uxap:subSections>
+                            </uxap:ObjectPageSection>
+                        </uxap:sections>
+
+                    </uxap:ObjectPageLayout>
+
+                </content>
+            </Page>
+        </pages>
+    </App>
+
+</mvc:View>

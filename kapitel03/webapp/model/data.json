@@ -3,6 +3,7 @@
     "Nachname":"Meier",
     "personen" : [
         {
+            "BusinessPartnerID": "01",
             "Vorname" : "Meike",
             "Nachname" : "Müller",
             "Geburtsdatum" : "12.12.1922",

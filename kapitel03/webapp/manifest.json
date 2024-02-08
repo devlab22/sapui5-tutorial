@@ -15,7 +15,7 @@
     },
     "sap.ui5": {
         "rootView": {
-            "viewName": "de.sapui5buch.demo.view.App",
+            "viewName": "de.sapui5buch.demo.view.Home",
             "type": "XML",
             "async": true
         },

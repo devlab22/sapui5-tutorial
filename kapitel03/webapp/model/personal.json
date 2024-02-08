@@ -1,0 +1,42 @@
+{
+    "data": [
+        {
+            "BusinessPartnerID": "01",
+            "Vorname" : "Meike",
+            "Nachname" : "Müller",
+            "CompanyName": "SAP",
+            "LegalForm": "LegalForm",
+            "WebAddress": "www.sap.de",
+            "EmailAddress": "email",
+            "PhoneNumber": "",
+            "FaxNumber": "",
+            "Geburtsdatum" : "12.12.1922",
+            "Adresse" : {
+                "Street" : "Putzbrunner Str",
+                "Building" : 14,
+                "PostalCode": 81737,
+                "City":"Neuperlach",
+                "Country": "Germany"
+            }            
+        },
+        {
+            "BusinessPartnerID": "02",
+            "Vorname" : "Peter",
+            "Nachname" : "Huber",
+            "CompanyName": "SAP",
+            "LegalForm": "LegalForm",
+            "WebAddress": "www.sap.de",
+            "EmailAddress": "email",
+            "PhoneNumber": "",
+            "FaxNumber": "",
+            "Geburtsdatum" : "12.12.1985",
+            "Adresse" : {
+                "Street" : "Herbststraße",
+                "Building" : 25,
+                "PostalCode": 68219,
+                "City":"Mannheim",
+                "Country": "Germany"
+            }            
+        }
+    ]
+}

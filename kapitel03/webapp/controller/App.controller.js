@@ -1,18 +1,16 @@
 sap.ui.define([
     'de/sapui5buch/demo/controller/BaseController',
     'de/sapui5buch/demo/model/models',
-    'sap/m/MessageBox',
-    "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
-  
-], function (BaseController, models, MessageBox, Filter, FilterOperator) {
+    'sap/m/MessageBox'
+], function (BaseController, models, MessageBox) {
     'use strict';
     return BaseController.extend('de.sapui5buch.demo.controller.App',
         {
 
-            onInit: function () {
+            onInit: function(){
                 var oData = models.createDataModel();
                 this.setModel(oData, 'person');
+    
             },
 
             onPress: function(oEvent){
@@ -30,22 +28,6 @@ sap.ui.define([
                       }
                   );
                 
-            },
-            onSuggest: function(oEvent){
-
-                var sValue = oEvent.getParameter("suggestValue")
-                var aFilters = []
-                if(sValue){
-                    aFilters.push(new Filter("BusinessPartnerID", FilterOperator.StartsWith, sValue))
-                }
-
-                var oSource = oEvent.getSource()
-                var oBinding = oSource.getBinding("suggestionItems")
-                //oEvent.getSource().getBinding("suggestionItems").filter(aFilters)
-                console.log(oBinding)
-            },
-            onSuggestionItemSelected: function(oEvent){
-                console.log(oEvent)
             },
             onSelectionChange: function(oEvent){
 

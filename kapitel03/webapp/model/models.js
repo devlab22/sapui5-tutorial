@@ -6,6 +6,10 @@ sap.ui.define([
         createDataModel: function () {
             var oModel = new JSONModel('./model/data.json');
             return oModel;
+        },
+        createPersonalModel: function () {
+            var oModel = new JSONModel('./model/personal.json');
+            return oModel;
         }
     };
 });
