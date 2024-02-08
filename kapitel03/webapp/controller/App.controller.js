@@ -12,14 +12,11 @@ sap.ui.define([
                 this.setModel(oData, 'person');
     
             },
-
-            onPress: function(oEvent){
-                
-                
-            },
             onHello: function(oEvent){
 
-                var sValue = this.byId("idInputField").getValue()
+                var sFirstname = this.byId("firstName").getValue()
+                var sLastname = this.byId("lastName").getValue()
+                var sValue = `${sFirstname} ${sLastname}` 
 
                 MessageBox.show(
                     "Hallo " + sValue, {

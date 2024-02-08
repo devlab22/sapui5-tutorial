@@ -1,243 +1,108 @@
 <mvc:View
-        controllerName='de.sapui5buch.demo.controller.App'
-        xmlns:mvc='sap.ui.core.mvc'
-        xmlns='sap.m'
-        xmlns:l="sap.ui.layout"
-        xmlns:f="sap.ui.layout.form"
-        xmlns:core="sap.ui.core"
-        xmlns:uxap="sap.uxap"
-        >
-        <App>
-            <pages>
-                <Page title="my table">
-            <content>
-
-           
-
-                        <!-- <uxap:ObjectPageLayout
-                                id="ObjectPageLayout"
-                                showHeaderContent="false"
-                                toggleHeaderOnTitleClick="false">
-
-
-                            <uxap:headerTitle>
-                                <uxap:ObjectPageDynamicHeaderTitle>
-                                    <uxap:heading>
-                                        <Input
-                                                id="idInputField"
-                                                width="20rem"
-                                                placeholder="BusinessPartner ID..."
-                                                suggestionItemSelected="onSuggestionItemSelected"
-                                                showSuggestion="true"
-                                                suggest="onSuggest"
-                                                suggestionItems="{person>/personen}">
-                                            <suggestionItems>
-                                                <core:Item text="{BusinessPartnerID} {CompanyName}" />
-                                            </suggestionItems>
-                                        </Input>
-                                    </uxap:heading>
-                                </uxap:ObjectPageDynamicHeaderTitle>
-                            </uxap:headerTitle>
-
-                            <uxap:headerContent>
-                                <FlexBox
-                                        wrap="Wrap"
-                                        fitContainer="true"
-                                        id="headerContent">
-                                    <VBox class="sapUiLargeMarginEnd">
-                                        <HBox>
-                                            <Title text="Partnerdata" />
-                                        </HBox>
-                                        <HBox>
-                                            <Label
-                                                    class="sapUiTinyMarginEnd"
-                                                    text="Firmenname:" />
-                                            <Text text="{CompanyName}" />
-                                        </HBox>
-                                        <HBox>
-                                            <Label
-                                                    class="sapUiTinyMarginEnd"
-                                                    text="Partner ID:" />
-                                            <Text text="{BusinessPartnerID}" />
-                                        </HBox>
-                                        <HBox>
-                                            <Label
-                                                    class="sapUiTinyMarginEnd"
-                                                    text="Legal Form:" />
-                                            <Text text="{LegalForm}" />
-                                        </HBox>
-                                    </VBox>
-                                    <VBox>
-                                        <HBox>
-                                            <Title text="Kontaktdaten" />
-                                        </HBox>
-                                        <HBox>
-                                            <Label
-                                                    class="sapUiTinyMarginEnd"
-                                                    text="URL:" />
-                                            <Text text="{WebAddress}" />
-                                        </HBox>
-                                        <HBox>
-                                            <Label
-                                                    class="sapUiTinyMarginEnd"
-                                                    text="Email-Addresse:" />
-                                            <Text text="{EmailAddress}" />
-                                        </HBox>
-                                        <HBox>
-                                            <Label
-                                                    class="sapUiTinyMarginEnd"
-                                                    text="Telefon:" />
-                                            <Text text="{PhoneNumber}" />
-                                        </HBox>
-                                        <HBox>
-                                            <Label
-                                                    class="sapUiTinyMarginEnd"
-                                                    text="Fax:" />
-                                            <Text text="{FaxNumber}" />
-                                        </HBox>
-                                    </VBox>
-                                </FlexBox>
-                            </uxap:headerContent>
-
-                            <uxap:sections>
-                                <uxap:ObjectPageSection
-                                        title="Adresse"
-                                        visible="false"
-                                        id="addressSection">
-                                    <uxap:subSections>
-                                        <uxap:ObjectPageSubSection>
-                                            <VBox>
-                                                <HBox>
-                                                    <Label
-                                                            class="sapUiTinyMarginEnd"
-                                                            text="Strasse:" />
-                                                    <Text text="{Street} {Building}" />
-                                                </HBox>
-                                                <HBox>
-                                                    <Label
-                                                            class="sapUiTinyMarginEnd"
-                                                            text="Land PLZ Ort:" />
-                                                    <Text text="{Country} {PostalCode} {City}" />
-                                                </HBox>
-                                            </VBox>
-                                        </uxap:ObjectPageSubSection>
-                                    </uxap:subSections>
-                                </uxap:ObjectPageSection>
-                            </uxap:sections>
-
-                        </uxap:ObjectPageLayout> -->
-
-                        <FlexBox>
-                            <Label text='Vorname' />
-                            <Input value='{person>/Vorname}' />
-                            <Label text='Nachname' />
-                            <Input value='{person>/Nachname}' />
-                            <Button
-                                    text="Drück mich"
-                                    press='onPress' />
-                        </FlexBox>
+    controllerName='de.sapui5buch.demo.controller.App'
+    xmlns:mvc='sap.ui.core.mvc'
+    xmlns='sap.m'
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:uxap="sap.uxap"
+>
+    <App>
+        <pages>
+            <Page title="my table">
+                <content>
+                    <FlexBox>
+                        <Label text='Vorname' />
+                        <Input id="firstName" value='{person>/Vorname}' />
+                        <Label text='Nachname' />
+                        <Input id="lastName" value='{person>/Nachname}' />
+                        <Button
+                            text="Sag Hallo"
+                            press='onHello' />
+                    </FlexBox>
 
 
-                        <!-- <l:VerticalLayout>
-                            <Label text="Sag Hallo zu" />
-                            <Input
-                                    id="idInputField"
-                                    placeholder="BusinessPartner ID..."
-                                    showSuggestion="true"
-                                    suggest="onSuggest"
-                                    suggestionItems="{/d/results}"
-                                    width="20rem">
-                                <suggestionItems>
-                                    <core:Item text="{BusinessPartnerID} {CompanyName}" />
-                                </suggestionItems>
-                            </Input>
-                            <Button
-                                    text="Sag Hallo"
-                                    press="onHello" />
-                        </l:VerticalLayout> -->
+                    <Table
+                        items='{person>/personen}'
+                        alternateRowColors='true'
+                        headerText='Personal'
+                        inset='true'
+                        mode="SingleSelectLeft"
+                        selectionChange="onSelectionChange">
 
+                        <columns>
+                            <Column>
+                                <Text text='Vorname' />
+                            </Column>
+                            <Column>
+                                <Text text='Nachname' />
+                            </Column>
+                            <Column>
+                                <Text text='Geburtsdatum' />
+                            </Column>
+                        </columns>
 
-                        <Table
-                                items='{person>/personen}'
-                                alternateRowColors='true'
-                                headerText='Personal'
-                                inset='true'
-                                mode="SingleSelectLeft"
-                                selectionChange="onSelectionChange">
+                        <items>
+                            <ColumnListItem type='Active'>
+                                <cells>
+                                    <Text text='{person>Vorname}' />
+                                    <Text text='{person>Nachname}' />
+                                    <Text text='{person>Geburtsdatum}' />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
 
-                            <columns>
-                                <Column>
-                                    <Text text='Vorname' />
-                                </Column>
-                                <Column>
-                                    <Text text='Nachname' />
-                                </Column>
-                                <Column>
-                                    <Text text='Geburtsdatum' />
-                                </Column>
-                            </columns>
+                    </Table>
 
-                            <items>
-                                <ColumnListItem type='Active'>
-                                    <cells>
-                                        <Text text='{person>Vorname}' />
-                                        <Text text='{person>Nachname}' />
-                                        <Text text='{person>Geburtsdatum}' />
-                                    </cells>
-                                </ColumnListItem>
-                            </items>
-
-                        </Table>
-
-                        <f:Form id='addressForm'>
-                            <f:title>
-                                <core:Title text='Address' />
-                            </f:title>
-                            <f:layout>
-                                <f:ResponsiveGridLayout
-                                        labelSpanXL="3"
-                                        labelSpanL="3"
-                                        labelSpanM="3"
-                                        labelSpanS="12"
-                                        adjustLabelSpan="false"
-                                        emptySpanXL="4"
-                                        emptySpanL="4"
-                                        emptySpanM="4"
-                                        emptySpanS="0"
-                                        columnsXL="1"
-                                        columnsL="1"
-                                        columnsM="1"
-                                        singleContainerFullSize="false" />
-                            </f:layout>
-                            <f:formContainers>
-                                <f:FormContainer>
-                                    <f:formElements>
-                                        <f:FormElement label="Strasse u. Hausnummer">
-                                            <f:fields>
-                                                <Input value="{person>Strasse}" />
-                                                <Input value="{person>Hausnummer}">
-                                                    <layoutData>
-                                                        <l:GridData span="XL1 L2 M2 S4" />
-                                                    </layoutData>
-                                                </Input>
-                                            </f:fields>
-                                        </f:FormElement>
-                                        <f:FormElement label="Postleitzahl u. Code/City">
-                                            <f:fields>
-                                                <Input value="{person>PLZ}">
-                                                    <layoutData>
-                                                        <l:GridData span="XL1 L2 M2 S4" />
-                                                    </layoutData>
-                                                </Input>
-                                                <Input value="{person>Stadt}" />
-                                            </f:fields>
-                                        </f:FormElement>
-                                    </f:formElements>
-                                </f:FormContainer>
-                            </f:formContainers>
-                        </f:Form>
-                    </content>
-                </Page>
-                    </pages>
-        </App>
+                    <f:Form id='addressForm'>
+                        <f:title>
+                            <core:Title text='Address' />
+                        </f:title>
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false" />
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer>
+                                <f:formElements>
+                                    <f:FormElement label="Strasse u. Hausnummer">
+                                        <f:fields>
+                                            <Input value="{person>Strasse}" />
+                                            <Input value="{person>Hausnummer}">
+                                                <layoutData>
+                                                    <l:GridData span="XL1 L2 M2 S4" />
+                                                </layoutData>
+                                            </Input>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Postleitzahl u. Code/City">
+                                        <f:fields>
+                                            <Input value="{person>PLZ}">
+                                                <layoutData>
+                                                    <l:GridData span="XL1 L2 M2 S4" />
+                                                </layoutData>
+                                            </Input>
+                                            <Input value="{person>Stadt}" />
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                </content>
+            </Page>
+        </pages>
+    </App>
 </mvc:View>
