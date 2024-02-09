@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:l="sap.ui.layout"
+        >
+    <l:HorizontalLayout>
+
+        <Button
+                text="+"
+                press='onPlus' />
+        <Label
+                class="sapUiTinyMargin"
+                id="cntLbl"
+                text="0" />
+        <Button
+                text="-"
+                press='onMinus' />
+    </l:HorizontalLayout>
+</core:FragmentDefinition>

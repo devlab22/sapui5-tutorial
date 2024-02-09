@@ -1,108 +1,111 @@
 <mvc:View
-    controllerName='de.sapui5buch.demo.controller.App'
-    xmlns:mvc='sap.ui.core.mvc'
-    xmlns='sap.m'
-    xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
-    xmlns:core="sap.ui.core"
-    xmlns:uxap="sap.uxap"
->
-    <App>
-        <pages>
-            <Page title="my table">
-                <content>
-                    <FlexBox>
-                        <Label text='Vorname' />
-                        <Input id="firstName" value='{person>/Vorname}' />
-                        <Label text='Nachname' />
-                        <Input id="lastName" value='{person>/Nachname}' />
-                        <Button
-                            text="Sag Hallo"
-                            press='onHello' />
-                    </FlexBox>
+        controllerName='de.sapui5buch.demo.controller.App'
+        xmlns:mvc='sap.ui.core.mvc'
+        xmlns='sap.m'
+        xmlns:l="sap.ui.layout"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:core="sap.ui.core"
+        xmlns:uxap="sap.uxap">
+    <Panel
+            class="sapUIResponsiveMargin"
+            headerText="My Table">
+        <l:VerticalLayout>
+            <Label text='Vorname' />
+            <Input
+                    id="firstName"
+                    value='{person>/Vorname}' />
+            <Label text='Nachname' />
+            <Input
+                    id="lastName"
+                    value='{person>/Nachname}' />
+            <Button
+                    text="Sag Hallo"
+                    press='onHello' />
+                    <Button
+                    text="open Dialog"
+                    press='onOpenDialog' />
+        </l:VerticalLayout>
 
 
-                    <Table
-                        items='{person>/personen}'
-                        alternateRowColors='true'
-                        headerText='Personal'
-                        inset='true'
-                        mode="SingleSelectLeft"
-                        selectionChange="onSelectionChange">
+        <Table
+                items='{person>/personen}'
+                alternateRowColors='true'
+                headerText='Personal'
+                inset='true'
+                mode="SingleSelectLeft"
+                selectionChange="onSelectionChange">
 
-                        <columns>
-                            <Column>
-                                <Text text='Vorname' />
-                            </Column>
-                            <Column>
-                                <Text text='Nachname' />
-                            </Column>
-                            <Column>
-                                <Text text='Geburtsdatum' />
-                            </Column>
-                        </columns>
+            <columns>
+                <Column>
+                    <Text text='Vorname' />
+                </Column>
+                <Column>
+                    <Text text='Nachname' />
+                </Column>
+                <Column>
+                    <Text text='Geburtsdatum' />
+                </Column>
+            </columns>
 
-                        <items>
-                            <ColumnListItem type='Active'>
-                                <cells>
-                                    <Text text='{person>Vorname}' />
-                                    <Text text='{person>Nachname}' />
-                                    <Text text='{person>Geburtsdatum}' />
-                                </cells>
-                            </ColumnListItem>
-                        </items>
+            <items>
+                <ColumnListItem type='Active'>
+                    <cells>
+                        <Text text='{person>Vorname}' />
+                        <Text text='{person>Nachname}' />
+                        <Text text='{person>Geburtsdatum}' />
+                    </cells>
+                </ColumnListItem>
+            </items>
 
-                    </Table>
+        </Table>
 
-                    <f:Form id='addressForm'>
-                        <f:title>
-                            <core:Title text='Address' />
-                        </f:title>
-                        <f:layout>
-                            <f:ResponsiveGridLayout
-                                labelSpanXL="3"
-                                labelSpanL="3"
-                                labelSpanM="3"
-                                labelSpanS="12"
-                                adjustLabelSpan="false"
-                                emptySpanXL="4"
-                                emptySpanL="4"
-                                emptySpanM="4"
-                                emptySpanS="0"
-                                columnsXL="1"
-                                columnsL="1"
-                                columnsM="1"
-                                singleContainerFullSize="false" />
-                        </f:layout>
-                        <f:formContainers>
-                            <f:FormContainer>
-                                <f:formElements>
-                                    <f:FormElement label="Strasse u. Hausnummer">
-                                        <f:fields>
-                                            <Input value="{person>Strasse}" />
-                                            <Input value="{person>Hausnummer}">
-                                                <layoutData>
-                                                    <l:GridData span="XL1 L2 M2 S4" />
-                                                </layoutData>
-                                            </Input>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="Postleitzahl u. Code/City">
-                                        <f:fields>
-                                            <Input value="{person>PLZ}">
-                                                <layoutData>
-                                                    <l:GridData span="XL1 L2 M2 S4" />
-                                                </layoutData>
-                                            </Input>
-                                            <Input value="{person>Stadt}" />
-                                        </f:fields>
-                                    </f:FormElement>
-                                </f:formElements>
-                            </f:FormContainer>
-                        </f:formContainers>
-                    </f:Form>
-                </content>
-            </Page>
-        </pages>
-    </App>
+        <f:Form id='addressForm'>
+            <f:title>
+                <core:Title text='Address' />
+            </f:title>
+            <f:layout>
+                <f:ResponsiveGridLayout
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="3"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="4"
+                        emptySpanL="4"
+                        emptySpanM="4"
+                        emptySpanS="0"
+                        columnsXL="1"
+                        columnsL="1"
+                        columnsM="1"
+                        singleContainerFullSize="false" />
+            </f:layout>
+            <f:formContainers>
+                <f:FormContainer>
+                    <f:formElements>
+                        <f:FormElement label="Strasse u. Hausnummer">
+                            <f:fields>
+                                <Input value="{person>Strasse}" />
+                                <Input value="{person>Hausnummer}">
+                                    <layoutData>
+                                        <l:GridData span="XL1 L2 M2 S4" />
+                                    </layoutData>
+                                </Input>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Postleitzahl u. Code/City">
+                            <f:fields>
+                                <Input value="{person>PLZ}">
+                                    <layoutData>
+                                        <l:GridData span="XL1 L2 M2 S4" />
+                                    </layoutData>
+                                </Input>
+                                <Input value="{person>Stadt}" />
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+            </f:formContainers>
+        </f:Form>
+
+    </Panel>
 </mvc:View>

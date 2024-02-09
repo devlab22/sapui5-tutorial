@@ -6,8 +6,9 @@
    <!-- <Shell> -->
         <App>
             <pages>
-                <Page id="home"
-                    
+                <Page 
+                    id="home"
+                    title="Demo App"
                     >
                     <content>
                         <IconTabBar>

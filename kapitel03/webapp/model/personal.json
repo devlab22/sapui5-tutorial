@@ -11,7 +11,7 @@
             "PhoneNumber": "",
             "FaxNumber": "",
             "Geburtsdatum" : "12.12.1922",
-            "Adresse" : {
+            "Address" : {
                 "Street" : "Putzbrunner Str",
                 "Building" : 14,
                 "PostalCode": 81737,
@@ -23,18 +23,56 @@
             "BusinessPartnerID": "02",
             "Vorname" : "Peter",
             "Nachname" : "Huber",
-            "CompanyName": "SAP",
+            "CompanyName": "Meraki",
             "LegalForm": "LegalForm",
-            "WebAddress": "www.sap.de",
+            "WebAddress": "www.meraki.com",
             "EmailAddress": "email",
             "PhoneNumber": "",
             "FaxNumber": "",
             "Geburtsdatum" : "12.12.1985",
-            "Adresse" : {
-                "Street" : "Herbststraße",
+            "Address" : {
+                "Street" : "Huberstraße",
                 "Building" : 25,
                 "PostalCode": 68219,
                 "City":"Mannheim",
+                "Country": "Germany"
+            }            
+        },
+        {
+            "BusinessPartnerID": "03",
+            "Vorname" : "Reiner",
+            "Nachname" : "Herbst",
+            "CompanyName": "Cisco",
+            "LegalForm": "LegalForm",
+            "WebAddress": "www.cisco.de",
+            "EmailAddress": "email",
+            "PhoneNumber": "",
+            "FaxNumber": "",
+            "Geburtsdatum" : "12.12.1985",
+            "Address" : {
+                "Street" : "Herbststraße",
+                "Building" : 250,
+                "PostalCode": 68219,
+                "City":"Mannheim",
+                "Country": "Germany"
+            }            
+        },
+        {
+            "BusinessPartnerID": "04",
+            "Vorname" : "Patric",
+            "Nachname" : "Scholz",
+            "CompanyName": "Bosch",
+            "LegalForm": "LegalForm",
+            "WebAddress": "www.bosch.de",
+            "EmailAddress": "email",
+            "PhoneNumber": "",
+            "FaxNumber": "",
+            "Geburtsdatum" : "12.12.1985",
+            "Address" : {
+                "Street" : "Reventlouallee",
+                "Building" : 9,
+                "PostalCode": 24105,
+                "City":"Kiel",
                 "Country": "Germany"
             }            
         }
