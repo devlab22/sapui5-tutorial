@@ -9,7 +9,7 @@
                 text="+"
                 press='onPlus' />
         <Label
-                class="sapUiTinyMargin"
+                class="sapUiSmallMargin"
                 id="cntLbl"
                 text="0" />
         <Button

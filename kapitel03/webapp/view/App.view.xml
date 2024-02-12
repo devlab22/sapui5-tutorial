@@ -82,7 +82,9 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="Strasse u. Hausnummer">
+                        <f:FormElement  
+                            
+                            label="Strasse u. Hausnummer">
                             <f:fields>
                                 <Input value="{person>Strasse}" />
                                 <Input value="{person>Hausnummer}">

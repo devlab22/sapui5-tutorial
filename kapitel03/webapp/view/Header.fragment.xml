@@ -1,0 +1,112 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout">
+  <layout:ResponsiveFlowLayout id="headerContent" visible="false">
+    <layout:VerticalLayout width="100%">
+      
+      <HBox>
+        <Title text="Geschäftspartner-Details" />
+      </HBox>
+      <HBox>
+
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Firmenname:" />
+          <Text text="{personal>CompanyName}" />
+        </HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Partner ID:" />
+          <Text text="{personal>BusinessPartnerID}" />
+        </HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Legal Form:" />
+          <Text text="{personal>LegalForm}" />
+        </HBox>
+
+      </HBox>
+      
+      <layout:layoutData>
+        <layout:ResponsiveFlowLayoutData minWidth="250" />
+      </layout:layoutData>
+    
+    </layout:VerticalLayout>
+
+    <layout:VerticalLayout width="100%">
+      <HBox>
+        <Title text="Kontaktdaten" />
+      </HBox>
+      <HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="URL:" />
+          <Text text="{personal>WebAddress}" />
+        </HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Email-Addresse:" />
+          <Text text="{personal>EmailAddress}" />
+        </HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Telefon:" />
+          <Text text="{personal>PhoneNumber}" />
+        </HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Fax:" />
+          <Text text="{personal>FaxNumber}" />
+        </HBox>
+      </HBox>
+      <layout:layoutData>
+        <layout:ResponsiveFlowLayoutData minWidth="250" />
+      </layout:layoutData>
+    </layout:VerticalLayout>
+
+    <layout:VerticalLayout width="100%">
+      <HBox>
+        <Title text="Addresse" />
+      </HBox>
+      <HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Strasse:" />
+          <Text text="{personal>Address/Street} {personal>Address/Building}" />
+        </HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Land:" />
+          <Text text="{personal>Address/Country}" />
+        </HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="PLZ Stadt:" />
+          <Text text="{personal>PhoneNumber}" />
+        </HBox>
+        <HBox>
+          <Label
+              class="sapUiTinyMarginEnd"
+              text="Fax:" />
+          <Text text="{personal>Address/PostalCode} {personal>City}" />
+        </HBox>
+      </HBox>
+      <layout:layoutData>
+        <layout:ResponsiveFlowLayoutData minWidth="250" />
+      </layout:layoutData>
+    </layout:VerticalLayout>
+
+
+  </layout:ResponsiveFlowLayout>
+</core:FragmentDefinition>

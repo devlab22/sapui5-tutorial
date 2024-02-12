@@ -1,16 +1,13 @@
 sap.ui.define([
     'de/sapui5buch/demo/controller/BaseController',
-    'de/sapui5buch/demo/model/models',
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator",
-    'sap/ui/core/Fragment'
+    "sap/ui/model/FilterOperator"
   
-], function (BaseController, models, Filter, FilterOperator, Fragment) {
+], function (BaseController, Filter, FilterOperator) {
     'use strict';
-    return BaseController.extend('de.sapui5buch.demo.controller.Personal',
+    return BaseController.extend('de.sapui5buch.demo.controller.Partner',
         {
 
-            
             onSuggest: function(oEvent){
 
                 var sValue = oEvent.getParameter("suggestValue")
@@ -32,32 +29,7 @@ sap.ui.define([
 
                 var oHeaderContent = this.byId("headerContent")
                 oHeaderContent.bindElement(sBindingPath)
-
-                var oObjLayout = this.byId("ObjectPageLayout");
-                oObjLayout.setShowHeaderContent(true);
-                oObjLayout.setToggleHeaderOnTitleClick(true);
-
-                var oAddressSection = this.byId("addressSection")
-                oAddressSection.bindElement(sBindingPath)
-                oAddressSection.setProperty("visible", true)
-
-                var oAddressSection2 = this.byId("addressSection2")
-                oAddressSection2.bindElement(sBindingPath)
-                oAddressSection2.setProperty("visible", true)
-            },
-            onPlus: function(oEvent){
-                
-                var oCnt = this.byId("cntLbl")
-                var value = Number(oCnt.getProperty("text"))
-                value++
-                oCnt.setProperty("text", value)
-            },
-            onMinus: function(oEvent){
-
-                var oCnt = this.byId("cntLbl")
-                var value = Number(oCnt.getProperty("text"))
-                value--
-                oCnt.setProperty("text", value)
+                oHeaderContent.setProperty("visible", true)
             },
             onValueHelpRequest : function(oEvent) {
                 var sInputValue = oEvent.getSource().getValue();

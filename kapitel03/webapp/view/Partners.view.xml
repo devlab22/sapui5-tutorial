@@ -1,0 +1,33 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m"
+        xmlns:l="sap.ui.layout"
+        controllerName='de.sapui5buch.demo.controller.Partners'>
+    <Panel  
+        class="sapUIResponsiveMargin"
+        headerText="Personal">
+
+        <Input
+                id="idInputField"
+                width="20rem"
+                placeholder="BusinessPartner ID..."
+                suggestionItemSelected="onSuggestionItemSelected"
+                showSuggestion="true"
+                showValueHelp="true"
+                suggest="onSuggest"
+                valueHelpRequest="onValueHelpRequest"
+                suggestionItems="{personal>/data}">
+            <suggestionItems>
+                <core:Item text="{personal>BusinessPartnerID} {personal>CompanyName}" />
+            </suggestionItems>
+        </Input>
+
+        <core:Fragment
+            fragmentName="de.sapui5buch.demo.view.Header"
+            type="XML"
+        />
+
+    </Panel>
+
+</mvc:View>

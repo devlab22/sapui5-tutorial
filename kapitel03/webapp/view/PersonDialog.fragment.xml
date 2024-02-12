@@ -5,14 +5,17 @@
             noDataText="Kein Business-Partner gefunden"
             title="Wählen Sie einen Business-Partner"
             search="onSearch"
-            confirm="onClose"
+            confirm="onConfirm"
             cancel="onClose"
-            items="{path: 'personal>data'}">
-        <StandardListItem
+            items="{ path: 'personal>/data'}">
+           
+              <StandardListItem
                 title="{personal>BusinessPartnerID}"
                 description="{personal>CompanyName}"
                 iconDensityAware="false"
                 iconInset="false"
-                type="Active" />
+                type="Active" />  
+           
+        
     </SelectDialog>
 </core:FragmentDefinition>

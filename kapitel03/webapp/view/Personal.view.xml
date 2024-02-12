@@ -8,6 +8,7 @@
             class="sapUIResponsiveMargin"
             headerText="Personal"
             >
+
         <uxap:ObjectPageLayout
                 id="ObjectPageLayout"
                 showHeaderContent="false"
@@ -33,6 +34,8 @@
                     </uxap:heading>
                 </uxap:ObjectPageDynamicHeaderTitle>
             </uxap:headerTitle>
+
+
 
             <uxap:headerContent>
                 <FlexBox
@@ -118,7 +121,7 @@
                 </FlexBox>
             </uxap:headerContent>
 
-           <!--  <uxap:sections>
+            <uxap:sections>
                 <uxap:ObjectPageSection
                         title="Adresse"
                         visible="false"
@@ -145,15 +148,48 @@
 
                 </uxap:ObjectPageSection>
 
+                <uxap:ObjectPageSection
+                        title="Additional Adresse"
+                        visible="false"
+                        id="addressSection2">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection>
+                               <VBox>
+                                <HBox>
+                                    <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="Strasse:" />
+                                    <Text text="{personal>Street} {personal>Building}" />
+                                </HBox>
+                                <HBox>
+                                    <Label
+                                            class="sapUiTinyMarginEnd"
+                                            text="Land PLZ Ort:" />
+                                    <Text text="{personal>Country} {personal>PostalCode} {personal>City}" />
+                                </HBox>
+                            </VBox>  
+                           
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+
+                </uxap:ObjectPageSection>
+
                               
-            </uxap:sections> -->
+            </uxap:sections>
 
         </uxap:ObjectPageLayout>
 
 
-        <core:Fragment
+       <!--  <core:Fragment
             fragmentName="de.sapui5buch.demo.view.Counter"
             type="XML"
-        />
+        /> -->
+
+       <!--  <core:Fragment
+        fragmentName="de.sapui5buch.demo.view.Header"
+        type="XML"
+    /> -->
+
+        
     </Panel>
 </mvc:View>

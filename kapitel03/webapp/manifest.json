@@ -31,7 +31,20 @@
           "cozy": true
         },
         "models": {
-            
+            "i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "de.sapui5buch.demo.i18n.i18n"
+				}
+			},
+            "person": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data.json"
+			},
+            "personal": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/personal.json"
+			}
         }
     }
 }

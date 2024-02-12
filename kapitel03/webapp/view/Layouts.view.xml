@@ -1,0 +1,18 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    controllerName='de.sapui5buch.demo.controller.Layouts'
+>
+<Panel>
+
+    <l:HorizontalLayout class="sapUiContentPadding">
+            <Label text="{i18n>input}" />
+            <Input width="15rem" />
+            <Button text="{i18n>Ok}" />
+        </l:HorizontalLayout>
+
+</Panel>
+
+
+</mvc:View>
