@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+        xmlns:core="sap.ui.core"
+        xmlns:m="sap.m"
+        xmlns="sap.uxap">
+
+    <ObjectPageLayout
+            id="ObjectPageLayout"
+            showTitleInHeaderContent="true"
+            alwaysShowContentHeader="false"
+            preserveHeaderStateOnScroll="false"
+            headerContentPinnable="true"
+            isChildPage="true"
+            upperCaseAnchorBar="false">
+
+           
+
+            <headerContent>
+
+            </headerContent>
+
+    </ObjectPageLayout>
+
+</core:FragmentDefinition>

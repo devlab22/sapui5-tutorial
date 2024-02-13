@@ -1,0 +1,42 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:f="sap.f"
+        xmlns:core="sap.ui.core"
+        controllerName="de.sapui5buch.demo.controller.PartnerSplitt">
+
+    <App id="idPartnerSplitt">
+        <f:FlexibleColumnLayout id="masterDetailBase">
+
+            <f:beginColumnPages>
+                <core:Fragment
+                        fragmentName="de.sapui5buch.demo.view.PartnerTable"
+                        type="XML" />
+            </f:beginColumnPages>
+
+            <f:midColumnPages>
+                <Panel>
+                    <Toolbar>
+                        <ToolbarSpacer />
+                        <Button
+                                icon="sap-icon://decline"
+                                type="Transparent"
+                                press=".onCloseDetail" />
+                    </Toolbar>
+
+                    <core:Fragment
+                            fragmentName="de.sapui5buch.demo.view.Header"
+                            type="XML" />
+                </Panel>
+
+
+            </f:midColumnPages>
+
+            <f:endColumnPages>
+
+            </f:endColumnPages>
+        </f:FlexibleColumnLayout>
+
+    </App>
+
+</mvc:View>

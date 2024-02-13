@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m">
+    <Table
+            id="businessPartnerTable"
+            items="{personal>/data}"
+            mode="SingleSelectMaster"
+            selectionChange=".onListItemSelected"
+            growing="true"
+            growingThreshold="20">
+        <headerToolbar>
+            <Toolbar>
+                <ToolbarSpacer />
+                <core:Fragment
+                        fragmentName="de.sapui5buch.demo.view.Input"
+                        type="XML" />
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Label text="Partner ID" />
+            </Column>
+            <Column>
+                <Label text="Firmenname ID" />
+            </Column>
+            <Column>
+                <Label text="Legal Form" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem type="Navigation">
+                <Text text="{personal>BusinessPartnerID}" />
+                <Text text="{personal>CompanyName}" />
+                <Text text="{personal>LegalForm}" />
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>

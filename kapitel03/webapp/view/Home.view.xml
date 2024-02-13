@@ -47,6 +47,15 @@
                                         viewName="de.sapui5buch.demo.view.Partners" />
                             </IconTabFilter>
 
+                            <IconTabFilter
+                                    key="partnerSplitt"
+                                    text="Partners"
+                                    icon="sap-icon://card">
+                                <mvc:XMLView
+                                        id="partnersViewSplitt"
+                                        viewName="de.sapui5buch.demo.view.PartnerSplitt" />
+                            </IconTabFilter>
+
                         </items>
                     </IconTabBar>
                 </content>

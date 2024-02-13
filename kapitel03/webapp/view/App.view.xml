@@ -21,7 +21,7 @@
             <Button
                     text="Sag Hallo"
                     press='onHello' />
-                    <Button
+            <Button
                     text="open Dialog"
                     press='onOpenDialog' />
         </l:VerticalLayout>
@@ -59,32 +59,21 @@
 
         </Table>
 
-        <f:Form id='addressForm'>
-            <f:title>
-                <core:Title text='Address' />
-            </f:title>
-            <f:layout>
-                <f:ResponsiveGridLayout
-                        labelSpanXL="3"
-                        labelSpanL="3"
-                        labelSpanM="3"
-                        labelSpanS="12"
-                        adjustLabelSpan="false"
-                        emptySpanXL="4"
-                        emptySpanL="4"
-                        emptySpanM="4"
-                        emptySpanS="0"
-                        columnsXL="1"
-                        columnsL="1"
-                        columnsM="1"
-                        singleContainerFullSize="false" />
-            </f:layout>
-            <f:formContainers>
-                <f:FormContainer>
+        <f:SimpleForm
+                id='addressForm'
+                title="Address"
+                layout="ColumnLayout"
+                columnsL="1">
+
+            <Label text="Strasse u. Hausnummer" />
+            <Text text="{person>Strasse} {person>Hausnummer}" />
+            <Label text="Postleitzahl u. Stadt" />
+            <Text text="{person>PLZ} {person>Stadt}" />
+
+            <!-- <f:formContainers>
+                <f:FormContainer editable="false">
                     <f:formElements>
-                        <f:FormElement  
-                            
-                            label="Strasse u. Hausnummer">
+                        <f:FormElement label="Strasse u. Hausnummer">
                             <f:fields>
                                 <Input value="{person>Strasse}" />
                                 <Input value="{person>Hausnummer}">
@@ -106,8 +95,8 @@
                         </f:FormElement>
                     </f:formElements>
                 </f:FormContainer>
-            </f:formContainers>
-        </f:Form>
+            </f:formContainers> -->
+        </f:SimpleForm>
 
     </Panel>
 </mvc:View>

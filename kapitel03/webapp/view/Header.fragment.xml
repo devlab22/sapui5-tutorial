@@ -1,112 +1,148 @@
 <core:FragmentDefinition
     xmlns:core="sap.ui.core"
     xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
     xmlns:layout="sap.ui.layout">
-  <layout:ResponsiveFlowLayout id="headerContent" visible="false">
+  <layout:ResponsiveFlowLayout
+      id="headerContent"
+      visible="false">
     <layout:VerticalLayout width="100%">
-      
-      <HBox>
-        <Title text="Geschäftspartner-Details" />
-      </HBox>
-      <HBox>
 
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Firmenname:" />
-          <Text text="{personal>CompanyName}" />
-        </HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Partner ID:" />
-          <Text text="{personal>BusinessPartnerID}" />
-        </HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Legal Form:" />
-          <Text text="{personal>LegalForm}" />
-        </HBox>
+      <form:Form editable="false">
 
-      </HBox>
-      
-      <layout:layoutData>
-        <layout:ResponsiveFlowLayoutData minWidth="250" />
-      </layout:layoutData>
-    
+        <form:title>
+          <core:Title text="Geschäftspartner-Details" />
+        </form:title>
+
+        <form:layout>
+          <!-- <form:ColumnLayout columnsL="2" /> -->
+          <form:ResponsiveGridLayout
+					labelSpanXL="4"
+					labelSpanL="4"
+					labelSpanM="4"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="0"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="3"
+					columnsL="2"
+					columnsM="2"
+					singleContainerFullSize="false" />
+        </form:layout>
+
+        <form:formContainers>
+
+          <form:FormContainer title="Firma">
+            <form:formElements>
+              <form:FormElement label="Firmenname">
+                <form:fields>
+                  <Text text="{personal>CompanyName}" />
+                </form:fields>
+              </form:FormElement>
+
+              <form:FormElement label="Partner ID">
+                <form:fields>
+                  <Text text="{personal>BusinessPartnerID}" />
+                </form:fields>
+              </form:FormElement>
+
+              <form:FormElement label="Legal Form">
+                <form:fields>
+                  <Text text="{personal>LegalForm}" />
+                </form:fields>
+              </form:FormElement>
+
+              <form:FormElement label="Ansprechspartner">
+                <form:fields>
+                  <Text text="{personal>Vorname} {personal>Nachname}" />
+                </form:fields>
+              </form:FormElement>
+
+            </form:formElements>
+          </form:FormContainer>
+
+          <form:FormContainer title="Kontaktdaten">
+            <form:formElements>
+              <form:FormElement label="URL">
+                <form:fields>
+                  <Text text="{personal>WebAddress}" />
+                </form:fields>
+              </form:FormElement>
+
+              <form:FormElement label="E-Mail">
+                <form:fields>
+                  <Text text="{personal>EmailAddress}" />
+                </form:fields>
+              </form:FormElement>
+
+              <form:FormElement label="Telefon">
+                <form:fields>
+                  <Text text="{personal>PhoneNumber}" />
+                </form:fields>
+              </form:FormElement>
+
+              <form:FormElement label="Fax">
+                <form:fields>
+                  <Text text="{personal>FaxNumber}" />
+                </form:fields>
+              </form:FormElement>
+
+            </form:formElements>
+          </form:FormContainer>
+
+           <form:FormContainer title="Adresse">
+            <form:formElements>
+              <form:FormElement label="Strasse">
+                <form:fields>
+                  <Text text="{personal>Address/Street} {personal>Address/Building}" />
+                </form:fields>
+              </form:FormElement>
+
+              <form:FormElement label="Land">
+                <form:fields>
+                  <Text text="{personal>Address/Country}" />
+                </form:fields>
+              </form:FormElement>
+
+              <form:FormElement label="PLZ Stadt">
+                <form:fields>
+                  <Text text="{personal>Address/PostalCode} {personal>City}" />
+                </form:fields>
+              </form:FormElement>
+
+            </form:formElements>
+          </form:FormContainer>
+
+        </form:formContainers>
+
+      </form:Form>
+
+     <!--  <form:SimpleForm 
+        editable="true" 
+        layout="ColumnLayout" 
+        columnsL="1"
+         >
+     
+      <Title text="Form" visible="false" />
+     
+      <Label text="Strasse" />
+      <Input value="{personal>Address/Street}" editable="false"  />
+      <Input value="{personal>Address/Building}" editable="false" />
+     
+      <Label text="PLZ" />
+      <Input value="{personal>Address/PostalCode}" editable="false" />
+     
+      <Label text="Ort" />
+      <Input value="{personal>Address/City}" editable="false"  />
+     
+      <Label text="Land" />
+      <Input value="{personal>Address/Country}" editable="false"  />
+     
+    </form:SimpleForm> -->
+
     </layout:VerticalLayout>
-
-    <layout:VerticalLayout width="100%">
-      <HBox>
-        <Title text="Kontaktdaten" />
-      </HBox>
-      <HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="URL:" />
-          <Text text="{personal>WebAddress}" />
-        </HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Email-Addresse:" />
-          <Text text="{personal>EmailAddress}" />
-        </HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Telefon:" />
-          <Text text="{personal>PhoneNumber}" />
-        </HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Fax:" />
-          <Text text="{personal>FaxNumber}" />
-        </HBox>
-      </HBox>
-      <layout:layoutData>
-        <layout:ResponsiveFlowLayoutData minWidth="250" />
-      </layout:layoutData>
-    </layout:VerticalLayout>
-
-    <layout:VerticalLayout width="100%">
-      <HBox>
-        <Title text="Addresse" />
-      </HBox>
-      <HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Strasse:" />
-          <Text text="{personal>Address/Street} {personal>Address/Building}" />
-        </HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Land:" />
-          <Text text="{personal>Address/Country}" />
-        </HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="PLZ Stadt:" />
-          <Text text="{personal>PhoneNumber}" />
-        </HBox>
-        <HBox>
-          <Label
-              class="sapUiTinyMarginEnd"
-              text="Fax:" />
-          <Text text="{personal>Address/PostalCode} {personal>City}" />
-        </HBox>
-      </HBox>
-      <layout:layoutData>
-        <layout:ResponsiveFlowLayoutData minWidth="250" />
-      </layout:layoutData>
-    </layout:VerticalLayout>
-
 
   </layout:ResponsiveFlowLayout>
 </core:FragmentDefinition>

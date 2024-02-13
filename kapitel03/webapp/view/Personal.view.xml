@@ -122,6 +122,7 @@
             </uxap:headerContent>
 
             <uxap:sections>
+                
                 <uxap:ObjectPageSection
                         title="Adresse"
                         visible="false"
