@@ -2,14 +2,16 @@
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m"
         controllerName="de.sapui5buch.demo.controller.Home">
-    <!-- <Shell> -->
+    <Shell appWidthLimited="false">
     <App>
         <pages>
             <Page
                     id="home"
                     title="Demo App">
                 <content>
-                    <IconTabBar selectedKey="partners">
+                    <IconTabBar 
+                        expandable="false" 
+                        selectedKey="partners">
                         <items>
                             <IconTabFilter
                                     key="table"
@@ -62,5 +64,5 @@
             </Page>
         </pages>
     </App>
-    <!-- </Shell> -->
+    </Shell>
 </mvc:View>

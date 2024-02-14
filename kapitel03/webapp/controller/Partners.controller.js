@@ -27,9 +27,17 @@ sap.ui.define([
             },
             _updateUI: function(sBindingPath){
 
+                /* var oContent = this.byId("BusinessPartnerDetails")
+                oContent.bindElement(sBindingPath)
+                oContent.setProperty("visible", true) */
+
                 var oHeaderContent = this.byId("headerContent")
                 oHeaderContent.bindElement(sBindingPath)
                 oHeaderContent.setProperty("visible", true)
+
+                var oAddressContent = this.byId("addressContent")
+                oAddressContent.bindElement(sBindingPath)
+                oAddressContent.setProperty("visible", true)
             },
             onValueHelpRequest : function(oEvent) {
                 var sInputValue = oEvent.getSource().getValue();

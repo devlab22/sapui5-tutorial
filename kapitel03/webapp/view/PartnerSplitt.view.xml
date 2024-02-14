@@ -15,7 +15,7 @@
             </f:beginColumnPages>
 
             <f:midColumnPages>
-                <Panel>
+                <!-- <Panel>
                     <Toolbar>
                         <ToolbarSpacer />
                         <Button
@@ -27,7 +27,14 @@
                     <core:Fragment
                             fragmentName="de.sapui5buch.demo.view.Header"
                             type="XML" />
-                </Panel>
+                    
+                            <core:Fragment
+                            fragmentName="de.sapui5buch.demo.view.AddressForm"
+                            type="XML" />
+                </Panel> -->
+                <core:Fragment
+                            fragmentName="de.sapui5buch.demo.view.BusinessPartnerDetailsIconTab"
+                            type="XML"/>
 
 
             </f:midColumnPages>

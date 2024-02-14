@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m">
+    <Table
+            id="ordersTable"
+            alternateRowColors="true"
+            items="{personal>Orders}">
+        <columns>
+            <Column>
+                <Label text="ID" />
+            </Column>
+            <Column>
+                <Label text="Bezeichnung" />
+            </Column>
+            <Column>
+                <Label text="Preis pro Artikle" />
+            </Column>
+            <Column>
+                <Label text="Anzahl" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <Text text="{personal>id}" />
+                <Text text="{personal>description}" />
+                <ObjectNumber 
+                    number="{personal>price}" 
+                    unit="{personal>currency}"
+                    state="Information"
+                    />
+                <Text text="{personal>count}" />
+            </ColumnListItem>
+        </items>
+    </Table>
+
+</core:FragmentDefinition>

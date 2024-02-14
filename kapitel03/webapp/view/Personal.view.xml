@@ -4,7 +4,56 @@
         xmlns:uxap="sap.uxap"
         xmlns:core="sap.ui.core"
         controllerName="de.sapui5buch.demo.controller.Personal">
-    <Panel
+
+    <Panel>
+
+
+        <core:Fragment
+                fragmentName="de.sapui5buch.demo.view.Input"
+                type="XML"
+                class="sapUiSmallMargin" />
+        <FlexBox
+                wrap="Wrap"
+                fitContainer="true"
+                class="sapUiSmallMargin"
+                id="headerContent">
+
+
+            <VBox class="sapUiLargeMarginEnd">
+                <HBox>
+                    <Title text="Geschäftspartner Details" />
+                </HBox>
+                <HBox>
+                    <Label
+                            class="sapUiTinyMarginEnd"
+                            text="Firmenname:" />
+                    <Text text="{personal>CompanyName}" />
+                </HBox>
+                <HBox>
+                    <Label
+                            class="sapUiTinyMarginEnd"
+                            text="Partner ID:" />
+                    <Text text="{personal>BusinessPartnerID}" />
+                </HBox>
+                <HBox>
+                    <Label
+                            class="sapUiTinyMarginEnd"
+                            text="Legal Form:" />
+                    <Text text="{personal>LegalForm}" />
+                </HBox>
+            </VBox>
+            <VBox>
+                <VBox>
+                    <HBox>
+                        <Title text="Kontaktdaten" />
+                    </HBox>
+                    <VBox id="component" />
+                </VBox>
+            </VBox>
+        </FlexBox>
+
+    </Panel>
+    <!--  <Panel
             class="sapUIResponsiveMargin"
             headerText="Personal"
             >
@@ -178,19 +227,9 @@
                               
             </uxap:sections>
 
-        </uxap:ObjectPageLayout>
-
-
-       <!--  <core:Fragment
-            fragmentName="de.sapui5buch.demo.view.Counter"
-            type="XML"
-        /> -->
-
-       <!--  <core:Fragment
-        fragmentName="de.sapui5buch.demo.view.Header"
-        type="XML"
-    /> -->
+        </uxap:ObjectPageLayout> 
 
         
-    </Panel>
+    </Panel>-->
+
 </mvc:View>

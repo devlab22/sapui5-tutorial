@@ -45,6 +45,21 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "model/personal.json"
 			}
+        },
+        "routing": {
+            "config": {
+              "routerClass": "sap.m.routing.Router",
+              "viewType": "XML",
+              "viewPath": "de.sapui5buch.demo.view",
+              "controlId": "idAppControl",
+              "controlAggregation": "pages",
+              "async": true
+            },
+            "routes": [
+              
+            ],
+            "targets": {   
+            }
         }
     }
 }

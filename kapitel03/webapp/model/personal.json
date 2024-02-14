@@ -5,7 +5,7 @@
             "Vorname" : "Meike",
             "Nachname" : "Müller",
             "CompanyName": "SAP",
-            "LegalForm": "LegalForm",
+            "LegalForm": "GmBH",
             "WebAddress": "www.sap.de",
             "EmailAddress": "email",
             "PhoneNumber": "",
@@ -17,14 +17,58 @@
                 "PostalCode": 81737,
                 "City":"Neuperlach",
                 "Country": "Germany"
-            }            
+            },
+            "Orders": [
+                {
+                    "id": "01",
+                    "description": "Python",
+                    "price": 120,
+                    "currency": "EUR",
+                    "count": 5
+                },
+                {
+                    "id": "02",
+                    "description": "Java Script",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "03",
+                    "description": "C++",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "04",
+                    "description": "ABAP",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "05",
+                    "description": "SAP UI5",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "06",
+                    "description": "SAP ODATA and Gateway",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                }
+            ]
         },
         {
             "BusinessPartnerID": "02",
             "Vorname" : "Peter",
             "Nachname" : "Huber",
             "CompanyName": "Meraki",
-            "LegalForm": "LegalForm",
+            "LegalForm": "AG",
             "WebAddress": "www.meraki.com",
             "EmailAddress": "email",
             "PhoneNumber": "",
@@ -36,14 +80,65 @@
                 "PostalCode": 68219,
                 "City":"Mannheim",
                 "Country": "Germany"
-            }            
+            },
+            "Orders": [
+                {
+                    "id": "01",
+                    "description": "Python",
+                    "price": 120,
+                    "currency": "EUR",
+                    "count": 5
+                },
+                {
+                    "id": "02",
+                    "description": "Java Script",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "03",
+                    "description": "C++",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "04",
+                    "description": "ABAP",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "05",
+                    "description": "SAP UI5",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "06",
+                    "description": "SAP ODATA and Gateway",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "07",
+                    "description": "React JS",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                }
+            ]            
         },
         {
             "BusinessPartnerID": "03",
             "Vorname" : "Reiner",
             "Nachname" : "Herbst",
             "CompanyName": "Cisco",
-            "LegalForm": "LegalForm",
+            "LegalForm": "AG",
             "WebAddress": "www.cisco.de",
             "EmailAddress": "email",
             "PhoneNumber": "",
@@ -55,14 +150,65 @@
                 "PostalCode": 68219,
                 "City":"Mannheim",
                 "Country": "Germany"
-            }            
+            },
+            "Orders": [
+                {
+                    "id": "01",
+                    "description": "Python",
+                    "price": 120,
+                    "currency": "EUR",
+                    "count": 5
+                },
+                {
+                    "id": "02",
+                    "description": "Java Script",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "03",
+                    "description": "C++",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "04",
+                    "description": "ABAP",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "05",
+                    "description": "SAP UI5",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "06",
+                    "description": "SAP ODATA and Gateway",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "07",
+                    "description": "React JS",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                }
+            ]           
         },
         {
             "BusinessPartnerID": "04",
             "Vorname" : "Patric",
             "Nachname" : "Scholz",
             "CompanyName": "Bosch",
-            "LegalForm": "LegalForm",
+            "LegalForm": "GmBH",
             "WebAddress": "www.bosch.de",
             "EmailAddress": "email",
             "PhoneNumber": "",
@@ -74,7 +220,51 @@
                 "PostalCode": 24105,
                 "City":"Kiel",
                 "Country": "Germany"
-            }            
+            },
+            "Orders": [
+                {
+                    "id": "01",
+                    "description": "Python",
+                    "price": 120,
+                    "currency": "EUR",
+                    "count": 5
+                },
+                {
+                    "id": "02",
+                    "description": "Java Script",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "03",
+                    "description": "C++",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "04",
+                    "description": "ABAP",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "05",
+                    "description": "SAP UI5",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                },
+                {
+                    "id": "06",
+                    "description": "SAP ODATA and Gateway",
+                    "price": 100,
+                    "currency": "EUR",
+                    "count": 3
+                }
+            ]           
         }
     ]
 }

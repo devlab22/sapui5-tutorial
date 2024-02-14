@@ -10,9 +10,9 @@
 
       <form:Form editable="false">
 
-        <form:title>
+        <!-- <form:title>
           <core:Title text="Geschäftspartner-Details" />
-        </form:title>
+        </form:title> -->
 
         <form:layout>
           <!-- <form:ColumnLayout columnsL="2" /> -->
@@ -92,29 +92,6 @@
             </form:formElements>
           </form:FormContainer>
 
-           <form:FormContainer title="Adresse">
-            <form:formElements>
-              <form:FormElement label="Strasse">
-                <form:fields>
-                  <Text text="{personal>Address/Street} {personal>Address/Building}" />
-                </form:fields>
-              </form:FormElement>
-
-              <form:FormElement label="Land">
-                <form:fields>
-                  <Text text="{personal>Address/Country}" />
-                </form:fields>
-              </form:FormElement>
-
-              <form:FormElement label="PLZ Stadt">
-                <form:fields>
-                  <Text text="{personal>Address/PostalCode} {personal>City}" />
-                </form:fields>
-              </form:FormElement>
-
-            </form:formElements>
-          </form:FormContainer>
-
         </form:formContainers>
 
       </form:Form>
@@ -145,4 +122,5 @@
     </layout:VerticalLayout>
 
   </layout:ResponsiveFlowLayout>
+
 </core:FragmentDefinition>

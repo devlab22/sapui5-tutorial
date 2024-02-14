@@ -1,38 +1,97 @@
 <core:FragmentDefinition
         xmlns:core="sap.ui.core"
         xmlns="sap.m">
-    <Table
-            id="businessPartnerTable"
-            items="{personal>/data}"
-            mode="SingleSelectMaster"
-            selectionChange=".onListItemSelected"
-            growing="true"
-            growingThreshold="20">
-        <headerToolbar>
-            <Toolbar>
+    <Page showHeader="false">
+        <subHeader>
+            <OverflowToolbar asyncMode="true">
                 <ToolbarSpacer />
                 <core:Fragment
                         fragmentName="de.sapui5buch.demo.view.Input"
                         type="XML" />
-            </Toolbar>
-        </headerToolbar>
-        <columns>
-            <Column>
-                <Label text="Partner ID" />
-            </Column>
-            <Column>
-                <Label text="Firmenname ID" />
-            </Column>
-            <Column>
-                <Label text="Legal Form" />
-            </Column>
-        </columns>
-        <items>
-            <ColumnListItem type="Navigation">
-                <Text text="{personal>BusinessPartnerID}" />
-                <Text text="{personal>CompanyName}" />
-                <Text text="{personal>LegalForm}" />
-            </ColumnListItem>
-        </items>
-    </Table>
+                <OverflowToolbarButton
+                        icon="sap-icon://filter"
+                        text="Filtern"
+                        tooltip="Filtern">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="High" />
+                    </layoutData>
+                </OverflowToolbarButton>
+                <OverflowToolbarButton
+                        icon="sap-icon://sort"
+                        text="Sortieren"
+                        tooltip="Sortieren">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="Low" />
+                    </layoutData>
+                </OverflowToolbarButton>
+            </OverflowToolbar>
+        </subHeader>
+        <content>
+
+            <PullToRefresh
+                    id="pullToRefreshPartners"
+                    visible="{device>/support/touch}"
+                    refresh=".onRefreshPartnerTable" />
+
+            <Table
+                    id="businessPartnerTable"
+                    items="{
+                        path: 'personal>/data',
+                        sorter:{
+                            path: 'LegalForm',
+                            group: true
+                                }
+                    }"
+                    mode="SingleSelectMaster"
+                    selectionChange=".onListItemSelected"
+                    growing="true"
+                    growingThreshold="20">
+                <!--  <headerToolbar>
+                    <OverflowToolbar asyncMode="true">
+                        <ToolbarSpacer />
+                        <core:Fragment
+                                fragmentName="de.sapui5buch.demo.view.Input"
+                                type="XML" />
+                        <OverflowToolbarButton
+                                icon="sap-icon://filter"
+                                text="Filtern"
+                                tooltip="Filtern">
+                            <layoutData>
+                                <OverflowToolbarLayoutData priority="High" />
+                            </layoutData>
+                        </OverflowToolbarButton>
+                        <OverflowToolbarButton
+                                icon="sap-icon://sort"
+                                text="Sortieren"
+                                tooltip="Sortieren">
+                            <layoutData>
+                                <OverflowToolbarLayoutData priority="Low" />
+                            </layoutData>
+                        </OverflowToolbarButton>
+                    </OverflowToolbar>
+                </headerToolbar> -->
+                <columns>
+                    <Column>
+                        <Label text="Partner ID" />
+                    </Column>
+                    <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            popinDisplay="WithoutHeader">
+                        <Label text="Firmenname" />
+                    </Column>
+                    <Column minScreenWidth="Tablet">
+                        <Label text="Legal Form" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation">
+                        <Text text="{personal>BusinessPartnerID}" />
+                        <Text text="{personal>CompanyName}" />
+                        <Text text="{personal>LegalForm}" />
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
 </core:FragmentDefinition>

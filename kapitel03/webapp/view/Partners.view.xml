@@ -4,20 +4,23 @@
         xmlns="sap.m"
         xmlns:l="sap.ui.layout"
         controllerName='de.sapui5buch.demo.controller.Partners'>
-    <Panel  
-        class="sapUIResponsiveMargin"
-        headerText="Personal">
+    <Panel
+            class="sapUIResponsiveMargin"
+            headerText="Personal">
 
         <core:Fragment
-            fragmentName="de.sapui5buch.demo.view.Input"
-            type="XML"
-        />
+                fragmentName="de.sapui5buch.demo.view.Input"
+                type="XML" />
 
         <core:Fragment
-            fragmentName="de.sapui5buch.demo.view.Header"
-            type="XML"
-        />
+                fragmentName="de.sapui5buch.demo.view.Header"
+                type="XML" />
 
+        <core:Fragment
+                fragmentName="de.sapui5buch.demo.view.AddressForm"
+                type="XML" />
+
+                
     </Panel>
 
 </mvc:View>

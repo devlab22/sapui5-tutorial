@@ -3,7 +3,7 @@
         xmlns="sap.m">
     <Input
             id="idInputField"
-            width="20rem"
+            width="auto"
             placeholder="BusinessPartner ID..."
             suggestionItemSelected="onSuggestionItemSelected"
             showSuggestion="true"
@@ -14,5 +14,10 @@
         <suggestionItems>
             <core:Item text="{personal>BusinessPartnerID} {personal>CompanyName}" />
         </suggestionItems>
+        <layoutData>
+            <OverflowToolbarLayoutData
+                    priority="NeverOverflow"
+                    maxWidth="20rem" />
+        </layoutData>
     </Input>
 </core:FragmentDefinition>

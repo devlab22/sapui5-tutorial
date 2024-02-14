@@ -1,0 +1,41 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <Page 
+    id="BusinessPartnerDetails" 
+    showNavButton="true" 
+    navButtonPress=".onCloseDetail"
+    title="{personal>CompanyName}"
+     >
+    <IconTabBar expandable="false" tabDensityMode="Inherit" >
+      <items>
+        <IconTabFilter text="Kontaktdaten" 
+          icon="sap-icon://business-card"   
+          id="headerSection" >
+          <core:Fragment              
+            fragmentName="de.sapui5buch.demo.view.Header"
+            type="XML" 
+            class="sapUiSmallMargin"/>
+        </IconTabFilter>
+        <IconTabFilter text="Adresse" 
+          icon="sap-icon://customer-and-contacts" 
+          id="addressSection" >
+          <core:Fragment
+            fragmentName="de.sapui5buch.demo.view.AddressForm"
+            type="XML"
+            class="sapUiSmallMargin"/>
+        </IconTabFilter>
+        <IconTabFilter text="Bestellungen"
+          id="ordersTab"
+          count="3"
+          icon="sap-icon://my-sales-order" >
+          <!-- kein Inhalt -->
+          <core:Fragment
+          fragmentName="de.sapui5buch.demo.view.OrdersTable"
+          type="XML"
+          class="sapUiSmallMargin"/>
+        </IconTabFilter>
+      </items>
+    </IconTabBar>
+  </Page>
+</core:FragmentDefinition>
