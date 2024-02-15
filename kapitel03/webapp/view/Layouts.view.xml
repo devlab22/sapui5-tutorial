@@ -4,7 +4,7 @@
     xmlns:l="sap.ui.layout"
     controllerName='de.sapui5buch.demo.controller.Layouts'
 >
-<Panel>
+<Panel class="sapUiResponsiveMargin">
 
     <l:HorizontalLayout class="sapUiContentPadding">
             <Label text="{i18n>input}" />

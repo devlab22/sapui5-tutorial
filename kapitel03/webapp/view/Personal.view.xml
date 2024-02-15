@@ -5,7 +5,9 @@
         xmlns:core="sap.ui.core"
         controllerName="de.sapui5buch.demo.controller.Personal">
 
-    <Panel>
+    <Panel
+        class="sapUiResponsiveMargin"
+    >
 
 
         <core:Fragment

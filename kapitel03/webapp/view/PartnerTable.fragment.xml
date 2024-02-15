@@ -1,8 +1,8 @@
 <core:FragmentDefinition
         xmlns:core="sap.ui.core"
         xmlns="sap.m">
-    <Page showHeader="false">
-        <subHeader>
+    <Page>
+        <headerContent>
             <OverflowToolbar asyncMode="true">
                 <ToolbarSpacer />
                 <core:Fragment
@@ -25,7 +25,8 @@
                     </layoutData>
                 </OverflowToolbarButton>
             </OverflowToolbar>
-        </subHeader>
+        </headerContent>
+
         <content>
 
             <PullToRefresh

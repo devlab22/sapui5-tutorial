@@ -18,17 +18,35 @@
             <Column>
                 <Label text="Anzahl" />
             </Column>
+            <Column>
+                <Label text="Summe" />
+            </Column>
         </columns>
         <items>
             <ColumnListItem>
                 <Text text="{personal>id}" />
                 <Text text="{personal>description}" />
-                <ObjectNumber 
-                    number="{personal>price}" 
-                    unit="{personal>currency}"
-                    state="Information"
-                    />
-                <Text text="{personal>count}" />
+                <ObjectNumber
+                        number="{
+                        parts: [
+                            {path: 'personal>price'},
+                            {path: 'personal>currency'}
+                        ],
+                        type: 'sap.ui.model.type.Currency',
+                        formatOptions: {showMeasure: true }
+                        }"
+                        state="Information" />
+                <ObjectNumber number="{personal>count}"/>
+                <ObjectNumber
+                        number="{
+                        parts: [
+                            {path: 'personal>price'},
+                            {path: 'personal>count'},
+                            {path: 'personal>currency'}
+                        ],
+                        formatter: '.formatter.calculatePrice'
+                        }"
+                        state="Information" />
             </ColumnListItem>
         </items>
     </Table>

@@ -39,11 +39,13 @@
 			},
             "person": {
 				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/data.json"
+				"uri": "model/data.json",
+                "preload": true
 			},
             "personal": {
 				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/personal.json"
+				"uri": "model/personal.json",
+                "preload": true
 			}
         },
         "routing": {

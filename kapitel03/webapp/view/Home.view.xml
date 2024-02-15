@@ -3,13 +3,17 @@
         xmlns="sap.m"
         controllerName="de.sapui5buch.demo.controller.Home">
     <Shell appWidthLimited="false">
-    <App>
-        <pages>
-            <Page
-                    id="home"
-                    title="Demo App">
-                <content>
-                    <IconTabBar 
+        <App>
+            <pages>
+                <Page
+                        id="home"
+                        title="Demo App">
+                    <content>
+
+                       <!--  <mvc:XMLView
+                                id="partnersViewSplitt"
+                                viewName="de.sapui5buch.demo.view.PartnerSplitt" /> -->
+                        <IconTabBar 
                         expandable="false" 
                         selectedKey="partners">
                         <items>
@@ -60,9 +64,9 @@
 
                         </items>
                     </IconTabBar>
-                </content>
-            </Page>
-        </pages>
-    </App>
+                    </content>
+                </Page>
+            </pages>
+        </App>
     </Shell>
 </mvc:View>
