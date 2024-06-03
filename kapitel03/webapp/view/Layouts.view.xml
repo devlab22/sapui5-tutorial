@@ -2,14 +2,32 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
     controllerName='de.sapui5buch.demo.controller.Layouts'
 >
 <Panel class="sapUiResponsiveMargin">
 
     <l:HorizontalLayout class="sapUiContentPadding">
-            <Label text="{i18n>input}" />
-            <Input width="15rem" />
-            <Button text="{i18n>Ok}" />
+            <Label 
+                text="{i18n>input}" 
+                class="sapUiSmallMarginTop" 
+                />
+            <Input
+                width="20rem" 
+                id="idLayoutInput"
+                placeholder="BusinessPartner ID..."
+                suggestionItemSelected="onSuggestItemSelected"
+                showValueHelp="true"
+                valueHelpRequest="onValueHelpRequest"
+                showSuggestion="true"
+                suggest="handleSuggest"
+                suggestionItems="{personal>/data}"
+                >
+                <suggestionItems>
+                    <core:Item text="{personal>BusinessPartnerID} {personal>CompanyName}"/>
+                </suggestionItems>
+            </Input>
+            <Button text="{i18n>Ok}" press="onOpenDialog"/>
         </l:HorizontalLayout>
 
 </Panel>

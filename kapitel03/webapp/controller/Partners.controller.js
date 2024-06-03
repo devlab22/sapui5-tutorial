@@ -31,6 +31,11 @@ sap.ui.define([
                 oContent.bindElement(sBindingPath)
                 oContent.setProperty("visible", true) */
 
+                var oInput = this.byId("idInputField")
+                oInput.bindElement(sBindingPath)
+                //console.log(oInput)
+
+
                 var oHeaderContent = this.byId("headerContent")
                 oHeaderContent.bindElement(sBindingPath)
                 oHeaderContent.setProperty("visible", true)

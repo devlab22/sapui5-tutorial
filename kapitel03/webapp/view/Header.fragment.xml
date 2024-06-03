@@ -3,16 +3,11 @@
     xmlns="sap.m"
     xmlns:form="sap.ui.layout.form"
     xmlns:layout="sap.ui.layout">
-  <layout:ResponsiveFlowLayout
-      id="headerContent"
-      visible="false">
+  <layout:ResponsiveFlowLayout id="headerContent" visible="false"
+      >
     <layout:VerticalLayout width="100%">
 
       <form:Form editable="false">
-
-        <!-- <form:title>
-          <core:Title text="Geschäftspartner-Details" />
-        </form:title> -->
 
         <form:layout>
           <!-- <form:ColumnLayout columnsL="2" /> -->

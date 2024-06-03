@@ -16,6 +16,7 @@ sap.ui.define([
                 this.sSearchQuery = 0
                 this._mViewSettingsDialogs = {}
                 this._oFilterDialog = null
+                
             },
 
             onSuggest: function (oEvent) {

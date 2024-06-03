@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+    <SelectDialog
+        noDataText="Kein Business-Partner gefunden"
+        title="Wählen Sie einen Business-Partner"
+        search="onSearch"
+        confirm="onConfirm"
+        cancel="onClose"
+        items="{personal>/data}"
+    >
+        <StandardListItem
+            title="{personal>BusinessPartnerID}"
+            description="{personal>CompanyName}"
+            iconDensityAware="false"
+            iconInset="false"
+            type="Active"
+        />
+    </SelectDialog>
+
+</core:FragmentDefinition>
