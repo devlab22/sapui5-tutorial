@@ -15,7 +15,7 @@
                                 viewName="de.sapui5buch.demo.view.PartnerSplitt" /> -->
                         <IconTabBar 
                         expandable="false" 
-                        selectedKey="partners">
+                        selectedKey="layouts">
                         <items>
                             <IconTabFilter
                                     key="table"

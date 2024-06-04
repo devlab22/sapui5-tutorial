@@ -9,9 +9,33 @@ sap.ui.define([
     return BaseController.extend('de.sapui5buch.demo.controller.Layouts',
         {
 
+            onInit: function () {
+
+                var oContent = this.byId("PartnerDetailsTab")
+                if (oContent) {
+                    oContent.setProperty("visible", false)
+                }
+
+            },
+            handleSuggest: function (oEvent) {
+
+                var sValue = oEvent.getParameter("suggestValue")
+                var oModel = this.getModel("personal")
+                var data = oModel.getData()
+                console.log(oModel)
+                var index = data['data'].map(function (e) { return e.BusinessPartnerID; }).indexOf(sValue);
+
+                if (index >= 0) {
+                    var sPath = "personal>/data/" + index
+                    this._updateUI(sPath)
+                }
+
+            },
             onOpenDialog: function () {
 
                 var oView = this.getView()
+                var oInput = this.byId("idLayoutInput")
+                console.log(oInput.getBindingContext)
 
                 if (!this.byId("myDialog")) {
                     Fragment.load({
@@ -63,15 +87,39 @@ sap.ui.define([
                 oEvent.getSource().getBinding("items").filter([oFilter])
             },
 
-            onConfirm : function(oEvent) {
+            onConfirm: function (oEvent) {
 
-                var oSelectedItem =  oEvent.getParameter("selectedItem");
-               // console.log(oSelectedItem)
-                if (oSelectedItem) {
-                  /* this._updateUI(
-                   oSelectedItem.getBindingContext().getPath()); */
+                var oSelectedItem = oEvent.getParameter("selectedItem");
+                var sPath = oSelectedItem.getBindingContext("personal")
+                sPath = "personal>" + sPath
+
+                if (sPath) {
+                    this._updateUI(sPath);
                 }
-             }
+            },
+            _updateUI: function (sBindingPath) {
+
+
+                var oContent = this.byId("PartnerDetailsTab")
+                oContent.bindElement(sBindingPath)
+                oContent.setProperty("visible", true)
+
+
+                var oHeaderContent = this.byId("headerContent")
+                //oHeaderContent.bindElement(sBindingPath)
+                oHeaderContent.setProperty("visible", true)
+
+                var oAddressContent = this.byId("addressContent")
+                //oAddressContent.bindElement(sBindingPath)
+                oAddressContent.setProperty("visible", true)
+
+                var oOrdersTable = this.byId("ordersTable")
+                var count = oOrdersTable.getItems("personal").length
+                var oOrdersTab = this.byId("ordersTab")
+                oOrdersTab.setProperty("count", count)
+
+
+            },
 
         });
 });

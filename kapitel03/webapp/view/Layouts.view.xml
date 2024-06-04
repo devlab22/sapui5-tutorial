@@ -5,15 +5,17 @@
     xmlns:core="sap.ui.core"
     controllerName='de.sapui5buch.demo.controller.Layouts'
 >
-<Panel class="sapUiResponsiveMargin">
+    <Panel class="sapUiResponsiveMargin">
+        <content>
 
-    <l:HorizontalLayout class="sapUiContentPadding">
-            <Label 
-                text="{i18n>input}" 
-                class="sapUiSmallMarginTop" 
-                />
+        
+        <l:HorizontalLayout class="sapUiContentPadding">
+            <Label
+                text="{i18n>input}"
+                class="sapUiSmallMarginTop"
+            />
             <Input
-                width="20rem" 
+                width="20rem"
                 id="idLayoutInput"
                 placeholder="BusinessPartner ID..."
                 suggestionItemSelected="onSuggestItemSelected"
@@ -22,15 +24,19 @@
                 showSuggestion="true"
                 suggest="handleSuggest"
                 suggestionItems="{personal>/data}"
-                >
+            >
                 <suggestionItems>
-                    <core:Item text="{personal>BusinessPartnerID} {personal>CompanyName}"/>
+                    <core:Item text="{personal>BusinessPartnerID} {personal>CompanyName}" />
                 </suggestionItems>
             </Input>
-            <Button text="{i18n>Ok}" press="onOpenDialog"/>
+            <Button text="{i18n>Ok}" press="onOpenDialog" />
         </l:HorizontalLayout>
 
-</Panel>
+        <core:Fragment
+            fragmentName="de.sapui5buch.demo.view.PartnerDetailsTab"
+            type="XML" />
 
+        </content>
+    </Panel>
 
 </mvc:View>
