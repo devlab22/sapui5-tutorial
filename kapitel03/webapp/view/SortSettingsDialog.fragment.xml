@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+<ViewSettingsDialog confirm="onSortPartnerTableConfirm">
+    <sortItems>
+        <ViewSettingsItem text="Unternehmensname" key="CompanyName"/>
+        <ViewSettingsItem text="Rechtsform" key="LegalForm"/>
+        <ViewSettingsItem text="Land" key="Address/Country"/>
+    </sortItems>
+</ViewSettingsDialog>
+
+</core:FragmentDefinition>

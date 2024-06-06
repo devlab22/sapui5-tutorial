@@ -16,7 +16,7 @@ sap.ui.define([
                 this.sSearchQuery = 0
                 this._mViewSettingsDialogs = {}
                 this._oFilterDialog = null
-                
+
             },
 
             onSuggest: function (oEvent) {
@@ -109,25 +109,47 @@ sap.ui.define([
             },
             onSortPartnerTable: function (oEvent) {
 
-                this.bDescending = !this.bDescending;
-                this.fnApplyFiltersAndOrdering();
+                // this.fnApplyFiltersAndOrdering();
+                this.loadFragment(
+                    "de.sapui5buch.demo.view.SortSettingsDialog").then(
+                        function (oDialog) {
+                            oDialog.open();
+                        });
+
+            },
+            onSortPartnerTableConfirm: function (oEvent) {
+                var mParams = oEvent.getParameters()
+                var oBinding = this.byId("businessPartnerTable").getBinding("items")
+                var sPath = ''
+                var aGroups = []
+                var bDescending = false
+                var bSortDescending = false
+
+                 //sort
+                 if(mParams.sortItem){
+                    sPath = mParams.sortItem.getKey()
+                    bSortDescending = mParams.sortDescending
+                    aGroups.push(new Sorter(sPath, bSortDescending, bDescending))
+                }
+                oBinding.sort(aGroups)
+                //console.log(mParams)
 
             },
             onGroupPress: function (oEvent) {
 
-                this._loadFragment(
+                this.loadFragment(
                     "de.sapui5buch.demo.view.GroupSettingsDialog").then(
                         function (oDialog) {
                             oDialog.open();
                         });
             },
-            fnApplyFiltersAndOrdering: function (oEvent) {
+            fnApplyFiltersAndOrdering: function () {
                 var aFilters = [],
                     aSorters = [];
 
-
+                this.bDescending = !this.bDescending;
                 if (this.bGrouped) {
-                    aSorters.push(new Sorter("LegalForm", this.bDescending, this._fnGroup));
+                    aSorters.push(new Sorter("LegalForm", this.bDescending, this.bGrouped));
                 } else {
                     aSorters.push(new Sorter("LegalForm", this.bDescending));
                 }
@@ -139,7 +161,7 @@ sap.ui.define([
 
                 this.byId("businessPartnerTable").getBinding("items").filter(aFilters).sort(aSorters);
             },
-            _fnGroup: function (oContext) {
+            getGroup: function (oContext) {
                 var sLegalForm = oContext.getProperty("LegalForm");
 
                 return {
@@ -147,9 +169,26 @@ sap.ui.define([
                     text: sLegalForm
                 };
             },
+            getGroupHeader: function (oGroup) {
+
+                oGroup.title = oGroup.key
+                switch (oGroup.key) {
+                    case 'AG':
+                        oGroup['title'] = 'AG Group'
+                        break;
+                    case 'GmBH':
+                        oGroup.title = 'GmbH Form'
+                }
+                return new sap.m.GroupHeaderListItem({
+                    title: oGroup.title,
+                    upperCase: false
+                });
+            },
             _loadFragment: function (sFragmentName) {
 
-                return new Promise(function (resolve) {
+                return this.loadFragment(sFragmentName)
+
+                /* return new Promise(function (resolve) {
                     var oDialog = this._mViewSettingsDialogs[sFragmentName];
                     if (!oDialog) {
                         Fragment.load({
@@ -165,7 +204,7 @@ sap.ui.define([
                     } else {
                         resolve(oDialog);
                     }
-                }.bind(this));
+                }.bind(this)); */
 
             },
             onGroupDialogConfirm: function (oEvent) {
@@ -175,13 +214,100 @@ sap.ui.define([
                 var aGroups = []
                 var bDescending = false
 
-                if(mParams.groupItem){
+                if (mParams.groupItem) {
                     sPath = mParams.groupItem.getKey();
                     bDescending = mParams.groupDescending;
-                    aGroups.push(new Sorter(sPath, bDescending, true));        
+                    aGroups.push(new Sorter(sPath, bDescending, true));
                     oBinding.sort(aGroups);
                 }
-              
+
+            },
+            onFilterPartnerTable: function (oEvent) {
+
+                this.loadFragment(
+                    "de.sapui5buch.demo.view.FilterSettingsDialog").then(
+                        function (oDialog) {
+                            oDialog.open();
+                        });
+            },
+            onFilterSettingsConfirm: function (oEvent) {
+
+                var mParams = oEvent.getParameters()
+                var aFilters = []
+                var oBinding = this.byId("businessPartnerTable").getBinding("items")
+                var oComFilter = null
+                mParams.filterItems.forEach(oItem => {
+
+                    var aSplit = oItem.getKey().split("_")
+                    var sPath = aSplit[0]
+                    var sOperator = aSplit[1]
+                    var sValue1 = aSplit[2]
+                    var oFilter = new Filter(sPath, sOperator, sValue1)
+                    aFilters.push(oFilter)
+                })
+
+                if (aFilters.length > 0) {
+                    oComFilter = new Filter({
+                        filters: aFilters,
+                        and: true
+                    })
+                }
+
+                oBinding.filter(oComFilter)
+            },
+            onSettingsPress: function (oEvent) {
+
+                this.loadFragment(
+                    "de.sapui5buch.demo.view.SettingsDialog").then(
+                        function (oDialog) {
+                            oDialog.open();
+                        });
+            },
+            onSettingsDialogConfirm: function (oEvent) {
+                var mParams = oEvent.getParameters()
+                var bDescending = false
+                var bSortDescending = false
+                var sPath = ""
+                var oBinding = this.byId("businessPartnerTable").getBinding("items")
+
+                var aFilters = [],
+                    aSorters = [],
+                    aGroups = []
+
+                // filters
+                var oComFilter = null
+                mParams.filterItems.forEach(oItem => {
+
+                    var aSplit = oItem.getKey().split("_")
+                    sPath = aSplit[0]
+                    var sOperator = aSplit[1]
+                    var sValue1 = aSplit[2]
+                    var oFilter = new Filter(sPath, sOperator, sValue1)
+                    aFilters.push(oFilter)
+                })
+
+                if (aFilters.length > 0) {
+                    oComFilter = new Filter({
+                        filters: aFilters,
+                        and: true
+                    })
+                }
+
+                //goups
+                if (mParams.groupItem) {
+                    sPath = mParams.groupItem.getKey();
+                    bDescending = mParams.groupDescending;
+                    aGroups.push(new Sorter(sPath, bDescending, true));
+                }
+
+                //sort
+                if(mParams.sortItem){
+                    sPath = mParams.sortItem.getKey()
+                    bSortDescending = mParams.sortDescending
+                    aGroups.push(new Sorter(sPath, bSortDescending, bDescending))
+                }
+                oBinding.sort(aGroups).filter(aFilters);
+               // console.log(mParams)
             }
 
 

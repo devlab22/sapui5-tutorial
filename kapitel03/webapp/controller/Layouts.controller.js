@@ -35,7 +35,7 @@ sap.ui.define([
 
                 var oView = this.getView()
                 var oInput = this.byId("idLayoutInput")
-                console.log(oInput.getBindingContext)
+                
 
                 if (!this.byId("myDialog")) {
                     Fragment.load({

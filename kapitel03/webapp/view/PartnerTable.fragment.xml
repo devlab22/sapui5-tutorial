@@ -11,7 +11,9 @@
                 <OverflowToolbarButton
                         icon="sap-icon://filter"
                         text="Filtern"
-                        tooltip="Filtern">
+                        tooltip="Filtern"
+                        press="onFilterPartnerTable"
+                        >
                     <layoutData>
                         <OverflowToolbarLayoutData priority="High" />
                     </layoutData>
@@ -34,6 +36,15 @@
                         <OverflowToolbarLayoutData priority="Low" />
                     </layoutData>
                 </OverflowToolbarButton>
+                <OverflowToolbarButton
+                        icon="sap-icon://customize"
+                        text="Einstellungen"
+                        tooltip="Einstellungen"
+                        press="onSettingsPress">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="High" />
+                    </layoutData>
+                </OverflowToolbarButton>
             </OverflowToolbar>
         </headerContent>
 
@@ -48,10 +59,11 @@
                     id="businessPartnerTable"
                     items="{
                         path: 'personal>/data',
-                        sorter:{
-                            path: 'LegalForm',
-                            group: true
-                                }
+                        sorter:[
+                        { path: 'LegalForm', group: true},
+                        { path: 'CompanyName'}
+                                ],
+                        groupHeaderFactory: '.getGroupHeader'
                     }"
                     mode="SingleSelectMaster"
                     selectionChange=".onListItemSelected"
@@ -94,12 +106,16 @@
                     <Column minScreenWidth="Tablet">
                         <Label text="Legal Form" />
                     </Column>
+                     <Column minScreenWidth="Tablet">
+                        <Label text="Country" />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem type="Navigation">
                         <Text text="{personal>BusinessPartnerID}" />
                         <Text text="{personal>CompanyName}" />
                         <Text text="{personal>LegalForm}" />
+                        <Text text="{personal>Address/Country}"/>
                     </ColumnListItem>
                 </items>
             </Table>

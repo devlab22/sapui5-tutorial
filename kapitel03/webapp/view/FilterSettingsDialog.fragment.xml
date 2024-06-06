@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+<ViewSettingsDialog confirm="onFilterSettingsConfirm">
+<filterItems>
+<ViewSettingsFilterItem 
+    text="Rechtsform" 
+    key="LegalForm"
+    multiSelect="true">
+    <items>
+        <ViewSettingsItem text="SE" key="LegalForm_EQ_SE"/>
+        <ViewSettingsItem text="AG" key="LegalForm_EQ_AG"/>
+       <ViewSettingsItem text="GmbH" key="LegalForm_EQ_GmbH"/>
+       <ViewSettingsItem text="Ltd." key="LegalForm_EQ_Ltd"/>
+    </items>
+</ViewSettingsFilterItem>
+<ViewSettingsFilterItem
+        text="BusinessPartner ID" 
+        key="BPID"
+        multiSelect="false">
+        <items>
+          <ViewSettingsItem 
+            text="Kleiner als 0100000045"
+            key="BusinessPartnerID_LE_0100000045"/>
+          <ViewSettingsItem 
+            text="Größer als 0100000050"
+            key="BusinessPartnerID_GT_0100000050"/>
+          <ViewSettingsItem 
+            text="Gleich 0100000050"
+            key="BusinessPartnerID_EQ_0100000050"/>
+        </items>
+     </ViewSettingsFilterItem>
+</filterItems>
+
+</ViewSettingsDialog>
+
+</core:FragmentDefinition>

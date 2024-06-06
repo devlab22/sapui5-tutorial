@@ -1,13 +1,17 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/core/routing/History",
-	"de/sapui5buch/demo/model/formatter"
-], function(Controller, History, formatter) {
+	"de/sapui5buch/demo/model/formatter",
+	"sap/ui/core/Fragment"
+], function(Controller, History, formatter, Fragment) {
 	"use strict";
 
 	return Controller.extend("de.sapui5buch.demo.controller.BaseController", {
 		
 		formatter: formatter,
+		onInit: function(){
+			this._mViewSettingsDialogs = {}
+		},
 		onNavBack: function () {
 			//console.log("base controller onNavBack");
 			var oHistory, sPreviousHash;
@@ -70,7 +74,28 @@ sap.ui.define([
 		setIconTabProperties: function({view, tabId, count=0}){
 			var oTab = view.byId(tabId);
 			oTab.setProperty("count", count);
-		}
+		},
+		loadFragment: function (sFragmentName) {
+
+			return new Promise(function (resolve) {
+				var oDialog = this._mViewSettingsDialogs[sFragmentName];
+				if (!oDialog) {
+					Fragment.load({
+						name: sFragmentName,
+						type: "XML",
+						controller: this
+					}).then(function (oDialog) {
+						this._oFilterDialog = oDialog;
+						this.getView().addDependent(oDialog);
+						this._mViewSettingsDialogs[sFragmentName] = oDialog;
+						resolve(oDialog);
+					}.bind(this));
+				} else {
+					resolve(oDialog);
+				}
+			}.bind(this));
+
+		},
 
 	});
 

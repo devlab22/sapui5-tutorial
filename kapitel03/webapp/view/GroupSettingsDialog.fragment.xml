@@ -9,6 +9,9 @@
             <ViewSettingsItem
                     text="Rechtsform"
                     key="LegalForm" />
+            <ViewSettingsItem
+                    text="Land"
+                    key="Address/Country" />
         </groupItems>
     </ViewSettingsDialog>
 </core:FragmentDefinition>
