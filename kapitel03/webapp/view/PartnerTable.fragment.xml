@@ -1,52 +1,7 @@
 <core:FragmentDefinition
         xmlns:core="sap.ui.core"
         xmlns="sap.m">
-    <Page>
-        <headerContent>
-            <OverflowToolbar asyncMode="true">
-                <ToolbarSpacer />
-                <core:Fragment
-                        fragmentName="de.sapui5buch.demo.view.Input"
-                        type="XML" />
-                <OverflowToolbarButton
-                        icon="sap-icon://filter"
-                        text="Filtern"
-                        tooltip="Filtern"
-                        press="onFilterPartnerTable"
-                        >
-                    <layoutData>
-                        <OverflowToolbarLayoutData priority="High" />
-                    </layoutData>
-                </OverflowToolbarButton>
-                <OverflowToolbarButton
-                        icon="sap-icon://sort"
-                        text="Sortieren"
-                        press="onSortPartnerTable"
-                        tooltip="Sortieren">
-                    <layoutData>
-                        <OverflowToolbarLayoutData priority="Low" />
-                    </layoutData>
-                </OverflowToolbarButton>
-                <OverflowToolbarButton
-                        icon="sap-icon://group-2"
-                        text="Gruppieren"
-                        tooltip="Gruppiereinstellungen"
-                        press="onGroupPress">
-                    <layoutData>
-                        <OverflowToolbarLayoutData priority="Low" />
-                    </layoutData>
-                </OverflowToolbarButton>
-                <OverflowToolbarButton
-                        icon="sap-icon://customize"
-                        text="Einstellungen"
-                        tooltip="Einstellungen"
-                        press="onSettingsPress">
-                    <layoutData>
-                        <OverflowToolbarLayoutData priority="High" />
-                    </layoutData>
-                </OverflowToolbarButton>
-            </OverflowToolbar>
-        </headerContent>
+    <Panel>
 
         <content>
 
@@ -69,7 +24,7 @@
                     selectionChange=".onListItemSelected"
                     growing="true"
                     growingThreshold="20">
-                <!--  <headerToolbar>
+                 <headerToolbar>
                     <OverflowToolbar asyncMode="true">
                         <ToolbarSpacer />
                         <core:Fragment
@@ -78,6 +33,7 @@
                         <OverflowToolbarButton
                                 icon="sap-icon://filter"
                                 text="Filtern"
+                                press="onFilterPartnerTable"
                                 tooltip="Filtern">
                             <layoutData>
                                 <OverflowToolbarLayoutData priority="High" />
@@ -86,13 +42,32 @@
                         <OverflowToolbarButton
                                 icon="sap-icon://sort"
                                 text="Sortieren"
+                                press="onSortPartnerTable"
                                 tooltip="Sortieren">
                             <layoutData>
                                 <OverflowToolbarLayoutData priority="Low" />
                             </layoutData>
                         </OverflowToolbarButton>
+                        <OverflowToolbarButton
+                        icon="sap-icon://group-2"
+                        text="Gruppieren"
+                        tooltip="Gruppiereinstellungen"
+                        press="onGroupPress">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="Low" />
+                    </layoutData>
+                </OverflowToolbarButton>
+                <OverflowToolbarButton
+                        icon="sap-icon://customize"
+                        text="Einstellungen"
+                        tooltip="Einstellungen"
+                        press="onSettingsPress">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="High" />
+                    </layoutData>
+                </OverflowToolbarButton>
                     </OverflowToolbar>
-                </headerToolbar> -->
+                </headerToolbar>
                 <columns>
                     <Column>
                         <Label text="Partner ID" />
@@ -120,5 +95,5 @@
                 </items>
             </Table>
         </content>
-    </Page>
+    </Panel>
 </core:FragmentDefinition>

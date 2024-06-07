@@ -1,12 +1,19 @@
 <core:FragmentDefinition
   xmlns="sap.m"
   xmlns:core="sap.ui.core">
-  <Page 
+  <Panel 
     id="BusinessPartnerDetails" 
-    showNavButton="true" 
-    navButtonPress=".onCloseDetail"
-    title="{personal>CompanyName}"
+    headerText="{personal>CompanyName}"
      >
+
+     <Toolbar>
+      <ToolbarSpacer />
+      <Button
+              icon="sap-icon://decline"
+              type="Transparent"
+              press=".onCloseDetail" />
+  </Toolbar>
+    
     <IconTabBar expandable="false" tabDensityMode="Inherit" >
       <items>
         <IconTabFilter text="Kontaktdaten" 
@@ -37,5 +44,6 @@
         </IconTabFilter>
       </items>
     </IconTabBar>
-  </Page>
+  
+  </Panel>
 </core:FragmentDefinition>

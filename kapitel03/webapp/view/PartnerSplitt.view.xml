@@ -1,53 +1,37 @@
 <mvc:View
-        xmlns:mvc="sap.ui.core.mvc"
-        xmlns="sap.m"
-        xmlns:f="sap.f"
-        xmlns:core="sap.ui.core"
-        controllerName="de.sapui5buch.demo.controller.PartnerSplitt">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    controllerName="de.sapui5buch.demo.controller.PartnerSplitt">
 
-    <App
-            id="idPartnerSplitt"
-            class="sapUiResponsiveMargin"
-            >
+    <Panel
+        id="idPartnerSplitt"
+        class="sapUiResponsiveMargin"
+    >
 
-            <f:FlexibleColumnLayout id="masterDetailBase">
+        <f:FlexibleColumnLayout id="masterDetailBase">
 
-                <f:beginColumnPages>
-                    <core:Fragment
-                            fragmentName="de.sapui5buch.demo.view.PartnerTable"
-                            type="XML" />
-                </f:beginColumnPages>
+            <f:beginColumnPages>
+                <core:Fragment
+                    fragmentName="de.sapui5buch.demo.view.PartnerTable"
+                    type="XML" />
+            </f:beginColumnPages>
 
-                <f:midColumnPages>
-                    <!-- <Panel>
-                    <Toolbar>
-                        <ToolbarSpacer />
-                        <Button
-                                icon="sap-icon://decline"
-                                type="Transparent"
-                                press=".onCloseDetail" />
-                    </Toolbar>
+            <f:midColumnPages>
 
-                    <core:Fragment
-                            fragmentName="de.sapui5buch.demo.view.Header"
-                            type="XML" />
-                    
-                            <core:Fragment
-                            fragmentName="de.sapui5buch.demo.view.AddressForm"
-                            type="XML" />
-                </Panel> -->
-                    <core:Fragment
-                            fragmentName="de.sapui5buch.demo.view.BusinessPartnerDetailsIconTab"
-                            type="XML" />
+                <core:Fragment
+                    fragmentName="de.sapui5buch.demo.view.BusinessPartnerDetailsIconTab"
+                    type="XML" />
 
 
-                </f:midColumnPages>
+            </f:midColumnPages>
 
-                <f:endColumnPages>
+            <f:endColumnPages>
 
-                </f:endColumnPages>
-            </f:FlexibleColumnLayout>
-       
-        </App>
+            </f:endColumnPages>
+        </f:FlexibleColumnLayout>
+
+    </Panel>
 
 </mvc:View>

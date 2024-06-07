@@ -38,6 +38,7 @@ sap.ui.define([
             },
             _updateUI: function (sBindingPath) {
 
+                console.log('updateUI')
                 this.byId("masterDetailBase").setLayout("TwoColumnsMidExpanded");
 
                 var oContent = this.byId("BusinessPartnerDetails")
@@ -93,13 +94,14 @@ sap.ui.define([
 
             },
             onListItemSelected: function (oEvent) {
+                
                 var oSelectedItem = oEvent.getParameter("listItem");
                 var sBindingPath = oSelectedItem.getBindingContext("personal").getPath();
                 this._updateUI("personal>" + sBindingPath);
             },
             onCloseDetail: function () {
-                this.byId("idInputField").setValue();
-                this.byId("businessPartnerTable").removeSelections(true);
+              //  this.byId("idInputField").setValue();
+              //  this.byId("businessPartnerTable").removeSelections(true);
                 this.byId("masterDetailBase").setLayout("OneColumn");
             },
             onRefreshPartnerTable: function (oEvent) {
@@ -125,8 +127,8 @@ sap.ui.define([
                 var bDescending = false
                 var bSortDescending = false
 
-                 //sort
-                 if(mParams.sortItem){
+                //sort
+                if (mParams.sortItem) {
                     sPath = mParams.sortItem.getKey()
                     bSortDescending = mParams.sortDescending
                     aGroups.push(new Sorter(sPath, bSortDescending, bDescending))
@@ -188,24 +190,6 @@ sap.ui.define([
 
                 return this.loadFragment(sFragmentName)
 
-                /* return new Promise(function (resolve) {
-                    var oDialog = this._mViewSettingsDialogs[sFragmentName];
-                    if (!oDialog) {
-                        Fragment.load({
-                            name: sFragmentName,
-                            type: "XML",
-                            controller: this
-                        }).then(function (oDialog) {
-                            this._oFilterDialog = oDialog;
-                            this.getView().addDependent(oDialog);
-                            this._mViewSettingsDialogs[sFragmentName] = oDialog;
-                            resolve(oDialog);
-                        }.bind(this));
-                    } else {
-                        resolve(oDialog);
-                    }
-                }.bind(this)); */
-
             },
             onGroupDialogConfirm: function (oEvent) {
                 var mParams = oEvent.getParameters()
@@ -223,7 +207,7 @@ sap.ui.define([
 
             },
             onFilterPartnerTable: function (oEvent) {
-
+                
                 this.loadFragment(
                     "de.sapui5buch.demo.view.FilterSettingsDialog").then(
                         function (oDialog) {
@@ -271,7 +255,6 @@ sap.ui.define([
                 var oBinding = this.byId("businessPartnerTable").getBinding("items")
 
                 var aFilters = [],
-                    aSorters = [],
                     aGroups = []
 
                 // filters
@@ -301,15 +284,14 @@ sap.ui.define([
                 }
 
                 //sort
-                if(mParams.sortItem){
+                if (mParams.sortItem) {
                     sPath = mParams.sortItem.getKey()
                     bSortDescending = mParams.sortDescending
                     aGroups.push(new Sorter(sPath, bSortDescending, bDescending))
                 }
                 oBinding.sort(aGroups).filter(aFilters);
-               // console.log(mParams)
+                
             }
-
 
 
         });

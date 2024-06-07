@@ -91,29 +91,6 @@
 
       </form:Form>
 
-     <!--  <form:SimpleForm 
-        editable="true" 
-        layout="ColumnLayout" 
-        columnsL="1"
-         >
-     
-      <Title text="Form" visible="false" />
-     
-      <Label text="Strasse" />
-      <Input value="{personal>Address/Street}" editable="false"  />
-      <Input value="{personal>Address/Building}" editable="false" />
-     
-      <Label text="PLZ" />
-      <Input value="{personal>Address/PostalCode}" editable="false" />
-     
-      <Label text="Ort" />
-      <Input value="{personal>Address/City}" editable="false"  />
-     
-      <Label text="Land" />
-      <Input value="{personal>Address/Country}" editable="false"  />
-     
-    </form:SimpleForm> -->
-
     </layout:VerticalLayout>
 
   </layout:ResponsiveFlowLayout>

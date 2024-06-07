@@ -1,72 +1,72 @@
 <mvc:View
-        xmlns:mvc="sap.ui.core.mvc"
-        xmlns="sap.m"
-        controllerName="de.sapui5buch.demo.controller.Home">
-    <Shell appWidthLimited="false">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="de.sapui5buch.demo.controller.Home">
+    <!-- <Shell appWidthLimited="false"> -->
         <App>
             <pages>
                 <Page
-                        id="home"
-                        title="Demo App">
+                    id="home"
+                    title="Demo App">
                     <content>
 
-                       <!--  <mvc:XMLView
+                        <!--  <mvc:XMLView
                                 id="partnersViewSplitt"
                                 viewName="de.sapui5buch.demo.view.PartnerSplitt" /> -->
-                        <IconTabBar 
-                        expandable="false" 
-                        selectedKey="layouts">
-                        <items>
-                            <IconTabFilter
+                        <IconTabBar
+                            expandable="false"
+                            selectedKey="layouts">
+                            <items>
+                                <IconTabFilter
                                     key="table"
                                     text="Table"
                                     icon="sap-icon://card">
-                                <mvc:XMLView
+                                    <mvc:XMLView
                                         id="tableView"
                                         viewName="de.sapui5buch.demo.view.App" />
-                            </IconTabFilter>
+                                </IconTabFilter>
 
-                            <IconTabFilter
+                                <IconTabFilter
                                     key="personal"
                                     text="Personal"
                                     icon="sap-icon://card">
-                                <mvc:XMLView
+                                    <mvc:XMLView
                                         id="personalView"
                                         viewName="de.sapui5buch.demo.view.Personal" />
-                            </IconTabFilter>
+                                </IconTabFilter>
 
-                            <IconTabFilter
+                                <IconTabFilter
                                     key="layouts"
                                     text="Layouts"
                                     icon="sap-icon://card">
-                                <mvc:XMLView
+                                    <mvc:XMLView
                                         id="layoutsView"
                                         viewName="de.sapui5buch.demo.view.Layouts" />
-                            </IconTabFilter>
+                                </IconTabFilter>
 
-                            <IconTabFilter
+                                <IconTabFilter
                                     key="partners"
                                     text="Partners"
                                     icon="sap-icon://card">
-                                <mvc:XMLView
+                                    <mvc:XMLView
                                         id="partnersView"
                                         viewName="de.sapui5buch.demo.view.Partners" />
-                            </IconTabFilter>
+                                </IconTabFilter>
 
-                            <IconTabFilter
+                                <IconTabFilter
                                     key="partnerSplitt"
                                     text="Partners"
                                     icon="sap-icon://card">
-                                <mvc:XMLView
+                                    <mvc:XMLView
                                         id="partnersViewSplitt"
                                         viewName="de.sapui5buch.demo.view.PartnerSplitt" />
-                            </IconTabFilter>
+                                </IconTabFilter>
 
-                        </items>
-                    </IconTabBar>
+                            </items>
+                        </IconTabBar>
                     </content>
                 </Page>
             </pages>
         </App>
-    </Shell>
+    <!-- </Shell> -->
 </mvc:View>
